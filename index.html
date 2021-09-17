@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style/style.css" />
+    <title>Gra saper</title>
+  </head>
+
+  <body class="default-theme">
+    <div class="gameContainer">
+      <section class="menu active">
+        <div class="menu__actions">
+          <button id="move-board" class="menu__actions-move">
+            <i class="fas fa-arrows-alt"></i>
+          </button>
+          <button id="fullscreen"><i class="fas fa-expand"></i></button>
+          <button id="settings"><i class="fas fa-cogs"></i></button>
+        </div>
+        <div class="menu__themes">
+          <button id="default-theme"></button>
+          <button id="night-theme"></button>
+          <button id="dark-theme"></button>
+          <button id="red-theme"></button>
+        </div>
+      </section>
+      <header class="header">
+        <div class="header__counter">
+          <p id="bombs">0</p>
+        </div>
+        <div class="header__buttons">
+          <button class="header__buttons-restart">
+            <i class="fas fa-sync-alt"></i>
+          </button>
+          <button class="header__buttons-emoji"></button>
+          <button class="header__buttons-showMenu">
+            <i class="fas fa-arrows-alt-h"></i>
+          </button>
+        </div>
+        <div class="header__counter">
+          <p id="timer">0</p>
+        </div>
+      </header>
+      <section class="board"></section>
+      <section class="panel">
+        <h2 class="panel__title">Wybierz poziom trudności</h2>
+        <div class="panel__buttonsContainer">
+          <button id="easy" class="panel__button-difficulty">Łatwy</button>
+          <button id="medium" class="panel__button-difficulty">Średni</button>
+          <button id="expert" class="panel__button-difficulty">Trudny</button>
+        </div>
+      </section>
+
+      <div class="modal modal__settings">
+        <h2 class="modal__title">Opcje</h2>
+        <div class="modal__content">
+          <div class="modal__content__container">
+            <h3 class="modal__content__title">Ilość kliknięć na start</h3>
+            <input type="number" name="" id="clicks-onstart" />
+          </div>
+          <div class="modal__content__container">
+            <h3 class="modal__content__title">Rozmiar komórek</h3>
+            <select name="" id="items-size">
+              <option value="small">Mały</option>
+              <option value="medium" selected>Średni</option>
+              <option value="big">Duży</option>
+            </select>
+          </div>
+          <button class="modal__confirm">Potwierdź ustawienia</button>
+          <button class="modal__close">Zamknij</button>
+        </div>
+      </div>
+
+      <div class="modal modal__custom-game">
+        <h2 class="modal__title">Własna gra</h2>
+        <div class="modal__content">
+          <div class="modal__content__container">
+            <p>Liczba wierszy <input type="number" name="" id="" /></p>
+            <p>Liczba kolumn <input type="number" name="" id="" /></p>
+            <p>Liczba bomb <input type="number" name="" id="" /></p>
+          </div>
+          <button class="modal__confirm">Potwierdź ustawienia</button>
+          <button class="modal__close">Zamknij</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./src/js/main.js"></script>
+    <!-- <script type="module" src="./dist/bundle.js"></script> -->
+  </body>
+</html>

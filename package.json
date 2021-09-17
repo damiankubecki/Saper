@@ -1,0 +1,32 @@
+{
+  "name": "saper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "bundle": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damiankubecki/Saper.git"
+  },
+  "author": "Damian Kubecki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damiankubecki/Saper/issues"
+  },
+  "homepage": "https://github.com/damiankubecki/Saper#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.4",
+    "babel-loader": "^8.2.2",
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.39.0",
+    "webpack": "^5.52.0",
+    "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "babel-polyfill": "^6.26.0"
+  }
+}
