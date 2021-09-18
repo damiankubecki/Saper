@@ -1,0 +1,28 @@
+.panel {
+    &__title {
+      padding: 5px 0 10px;
+      border-top: 3px solid $primary-color--dark;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    &__buttonsContainer {
+      display: flex;
+      width: 100%;
+    }
+
+    &__button-difficulty {
+      flex-basis: 33.333%;
+      padding: 2px 15px;
+      border: 4px solid;
+      border-color: $border-template;
+      background-color: $primary-color;
+      font-size: 1.8rem;
+      cursor: pointer;
+
+      &:hover {
+        border: 2px solid;
+        border-color: $border-template;
+      }
+    }
+  }

@@ -1,7 +1,6 @@
 import Cells from "./Cells.js";
 
 export default class Board extends Cells {
-  gameBoard = document.querySelector(".board");
 
   newBoard() {
     this.#setBoardWidth();
@@ -11,32 +10,33 @@ export default class Board extends Cells {
     this.#renderListeningToCells();
   }
 
+
   revealBoardAfterLoose() {
     const cellsWithBomb = this.getCellsWithBomb();
-    cellsWithBomb.forEach((cell) =>
-      this.isCellFlagged(cell) ? undefined : this.markCellAsClicked(cell)
-    );
+    cellsWithBomb.forEach(cell => this.isCellFlagged(cell) ? undefined : this.markCellAsClicked(cell));
 
     const flaggedCells = this.getFlaggedCells();
-    flaggedCells.forEach((cell) =>
-      this.isCellABomb(cell) ? undefined : cell.classList.add("no-bomb")
-    );
+    flaggedCells.forEach(cell => this.isCellABomb(cell) ? undefined : cell.classList.add("no-bomb"));
   }
+
 
   restartGame() {
     this.initializeGame();
     this.animateRestartButton();
   }
 
+
   resetGamePosition() {
     this.gameContainer.style.left = "50%";
     this.gameContainer.style.top = 0;
   }
 
+
   #setBoardWidth() {
     this.gameBoard.textContent = "";
     this.gameBoard.style.width = `${this.itemsSize.cell * this.colsNumber}px`;
   }
+
 
   #renderCellsOnBoard() {
     for (let i = 0; i < this.rowsNumber * this.colsNumber; i++) {
@@ -45,24 +45,22 @@ export default class Board extends Cells {
     }
   }
 
+
   #renderListeningToCells() {
     const allCells = this.getAllCells();
 
-    allCells.forEach((cell) =>
-      cell.addEventListener("click", () => {
-        this.isCellFlagged(cell) ? undefined : this.clickCell(cell);
-      })
-    );
+    allCells.forEach(cell => cell.addEventListener("click", () => {
+      this.isCellFlagged(cell) ? undefined : this.clickCell(cell);
+    }));
 
-    allCells.forEach((cell) =>
-      cell.addEventListener("contextmenu", (e) => {
-        e.preventDefault();
-        this.toggleFlagMarkOnCell(cell);
-        const numberOfBombsToDisplay = this.getBombsLeft();
-        this.setBombsCounter(numberOfBombsToDisplay);
-      })
-    );
+    allCells.forEach(cell => cell.addEventListener("contextmenu", e => {
+      e.preventDefault();
+      this.toggleFlagMarkOnCell(cell);
+      const numberOfBombsToDisplay = this.getBombsLeft();
+      this.setBombsCounter(numberOfBombsToDisplay);
+    }));
   }
+
 
   #addDatasetToCells() {
     const cells = this.getAllCells();
@@ -86,6 +84,7 @@ export default class Board extends Cells {
     this.#setNumberOfBombsNearCells();
   }
 
+
   #matchBodyToBoardSize() {
     const gameHeight = this.gameContainer.offsetHeight;
     const gameMargin = 100;
@@ -96,6 +95,7 @@ export default class Board extends Cells {
     } else document.body.style.minHeight = "100vh";
   }
 
+
   #createNewCell() {
     const cell = document.createElement("div");
     cell.classList.add("board__cell");
@@ -105,6 +105,7 @@ export default class Board extends Cells {
 
     return cell;
   }
+
 
   #addBombToRandomCells() {
     const bombs = this.bombsNumber;
@@ -118,14 +119,13 @@ export default class Board extends Cells {
     }
   }
 
+
   #setNumberOfBombsNearCells() {
     const noBombCells = this.getNoBombCells();
 
-    noBombCells.forEach((cell) => {
+    noBombCells.forEach(cell => {
       const cellsAround = this.getCellsAround(cell);
-      const numberOfBombsAroundCell = this.getNumberOfBombsInCells(
-        ...cellsAround
-      );
+      const numberOfBombsAroundCell = this.getNumberOfBombsInCells(...cellsAround);
 
       cell.dataset.near = numberOfBombsAroundCell;
     });

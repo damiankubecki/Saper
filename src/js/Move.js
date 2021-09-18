@@ -7,7 +7,8 @@ export default class Move extends Board {
     this.getResult = new Result();
   }
 
-  clickEmptyCellOnStart(quantity = 1) {
+
+  clickEmptyCellOnStart(quantity) {
     for (let i = 0; i < quantity; i++) {
       const emptyCells = this.getEmptyCells();
       const randomEmptyCell = emptyCells.random();
@@ -15,6 +16,7 @@ export default class Move extends Board {
       this.clickCell(randomEmptyCell);
     }
   }
+
 
   clickCell(cell) {
     this.markCellAsClicked(cell);
@@ -33,6 +35,7 @@ export default class Move extends Board {
     }
   }
 
+
   #revealCellsAroundEmptyCell(cell) {
     let emptyCells = [];
 
@@ -41,29 +44,25 @@ export default class Move extends Board {
     emptyCells.push(...cellsToBeClickedAgain);
 
     do {
-      emptyCells.forEach((cell) => {
+      emptyCells.forEach(cell => {
         this.markCellAsChecked(cell);
 
         const cellsToBeClickedAgain = this.#clickCellsAround(cell);
 
         emptyCells.push(...cellsToBeClickedAgain);
-        emptyCells = emptyCells.filter(
-          (cell, index) =>
-            emptyCells.indexOf(cell) === index && !this.isCellChecked(cell)
-        );
+        emptyCells = emptyCells.filter((cell, index) => emptyCells.indexOf(cell) === index && !this.isCellChecked(cell));
       });
     } while (emptyCells.length);
 
     this.getResult.checkWin.bind(this)();
   }
 
+
   #clickCellsAround(cell) {
     const cellsAround = this.getCellsAround(cell);
 
-    const noFlaggedCellsAround = cellsAround.filter(
-      (cell) => !this.isCellFlagged(cell)
-    );
-    noFlaggedCellsAround.forEach((cell) => this.markCellAsClicked(cell));
+    const noFlaggedCellsAround = cellsAround.filter(cell => !this.isCellFlagged(cell));
+    noFlaggedCellsAround.forEach(cell => this.markCellAsClicked(cell));
 
     return noFlaggedCellsAround.filter((cell) => !this.isBombNearCell(cell));
   }

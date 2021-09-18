@@ -4,31 +4,9 @@ export default class Panel extends Menu {
    constructor() {
       super();
 
-      const difficultyButtons = [
-         ...document.querySelectorAll(".panel__button-difficulty"),
-      ];
+      const difficultyButtons = [...document.querySelectorAll(".panel__button-difficulty")];
       const restartButton = document.querySelector(".header__buttons-restart");
-      const toggleMenuButton = document.querySelector(
-         ".header__buttons-showMenu"
-      );
-
-      const renderPanelListeners = () => {
-         difficultyButtons.forEach(btn =>
-            btn.addEventListener("click", () => {
-               this.setDifficulty(btn.id);
-               this.initializeGame();
-               this.resetGamePosition();
-            })
-         );
-
-         restartButton.addEventListener("click", () => this.restartGame());
-
-         toggleMenuButton.addEventListener("click", () =>
-            this.toggleSideBars()
-         );
-
-         renderShortcuts();
-      };
+      const toggleMenuButton = document.querySelector(".header__buttons-showMenu");
 
       const renderShortcuts = () => {
          document.body.addEventListener("keyup", e => {
@@ -40,13 +18,38 @@ export default class Panel extends Menu {
          });
       };
 
+      const renderPanelListeners = () => {
+
+         difficultyButtons.forEach(btn => btn.addEventListener("click", () => {
+            this.setDifficulty(btn.id);
+            this.initializeGame();
+            this.resetGamePosition();
+         }));
+
+         restartButton.addEventListener("click", () => this.restartGame());
+
+         toggleMenuButton.addEventListener("click", () => this.toggleSideBars());
+
+         renderShortcuts();
+      };
+
       renderPanelListeners();
    }
+
+
+   toggleSideBars() {
+      const sideBars = document.querySelector(".menu");
+      sideBars.classList.toggle("active");
+
+      this.animateSideBarsButton();
+   }
+
 
    setBombsCounter(bombs) {
       const bombsCounter = document.querySelector("#bombs");
       bombsCounter.textContent = bombs;
    }
+
 
    resetAndStartTimer() {
       let timer = document.querySelector("#timer");
@@ -60,6 +63,7 @@ export default class Panel extends Menu {
       return interval;
    }
 
+
    emojiAnimation(emotion, both = false) {
       const refreshedEmoji = this.resetEmoji();
 
@@ -70,6 +74,7 @@ export default class Panel extends Menu {
       refreshedEmoji.style.animationFillMode = fillMode;
    }
 
+
    resetEmoji() {
       const emoji = document.querySelector(".header__buttons-emoji");
 
@@ -79,11 +84,13 @@ export default class Panel extends Menu {
       return emoji;
    }
 
+
    stopTimer() {
       const old_timer = document.querySelector("#timer");
       const new_timer = old_timer.cloneNode(true);
       old_timer.parentNode.replaceChild(new_timer, old_timer);
    }
+
 
    #resetTimer(timer) {
       const old_timer = timer;
@@ -94,6 +101,7 @@ export default class Panel extends Menu {
       return new_timer;
    }
 
+
    animateRestartButton() {
       const restartButton = document.querySelector(".header__buttons-restart");
       restartButton.classList.remove("animate");
@@ -101,10 +109,9 @@ export default class Panel extends Menu {
       restartButton.classList.add("animate");
    }
 
+
    animateSideBarsButton() {
-      const SideBarsButton = document.querySelector(
-         ".header__buttons-showMenu"
-      );
+      const SideBarsButton = document.querySelector(".header__buttons-showMenu");
       SideBarsButton.classList.remove("animate");
       void SideBarsButton.offsetWidth;
       SideBarsButton.classList.add("animate");

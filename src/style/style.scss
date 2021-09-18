@@ -10,7 +10,6 @@ html {
   font-size: 10px;
 }
 
-@import "variables";
-@import "components/modal";
-@import "components/game";
-@import "./themes/night";
+@import './variables';
+@import './game';
+// @import "./themes/night";

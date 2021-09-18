@@ -2,112 +2,13 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   outline: none;
 }
 
 html {
   font-family: "Rajdhani", sans-serif;
   font-size: 10px;
-}
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background-color: #c0c0c0;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.modal.active {
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-
-.modal__title {
-  font-size: 4rem;
-  padding: 15px 0;
-}
-
-.modal__content {
-  width: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.modal__content__container {
-  padding: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.modal__content__title {
-  font-size: 2.3rem;
-}
-
-.modal__content p {
-  font-size: 1.5rem;
-}
-
-.modal__content input[type="number"] {
-  font-size: 2rem;
-  text-align: center;
-}
-
-.modal__content select {
-  padding: 3px 10px;
-  font-size: 1.7rem;
-}
-
-.modal__confirm,
-.modal__close {
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
-  width: 200px;
-  padding: 5px 0;
-  border-radius: 5px;
-  font-size: 1.6rem;
-  background-color: #c0c0c0;
-  border-color: #fff #808080 #808080 #fff;
-}
-
-.modal__confirm {
-  margin: 30px 0 5px;
-}
-
-.modal__close {
-  background-color: #d44040;
-  color: #fff;
 }
 
 body {
@@ -123,7 +24,7 @@ body .gameContainer {
   left: 50%;
   top: 0;
   -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+          transform: translateX(-50%);
   margin: 40px auto;
   padding: 10px;
   border: 4px solid #808080;
@@ -136,8 +37,8 @@ body .gameContainer {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body .gameContainer .menu.active .menu__actions {
@@ -150,8 +51,7 @@ body .gameContainer .menu.active .menu__themes {
   width: 40px;
 }
 
-body .gameContainer .menu__actions,
-body .gameContainer .menu__themes {
+body .gameContainer .menu__actions, body .gameContainer .menu__themes {
   position: absolute;
   top: -4px;
   left: -2px;
@@ -163,13 +63,12 @@ body .gameContainer .menu__themes {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: hidden;
 }
 
-body .gameContainer .menu__actions button,
-body .gameContainer .menu__themes button {
+body .gameContainer .menu__actions button, body .gameContainer .menu__themes button {
   height: 40px;
   width: 100%;
   margin: 5px 0;
@@ -194,20 +93,13 @@ body .gameContainer .menu__actions:after {
   display: block;
   height: 80px;
   width: 40px;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#808080),
-    color-stop(25%, #808080),
-    to(white)
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(#808080), color-stop(25%, #808080), to(white));
   background: linear-gradient(180deg, #808080 0%, #808080 25%, white 100%);
 }
 
 body .gameContainer .menu__actions button:hover {
   -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 body .gameContainer .menu__themes {
@@ -216,8 +108,8 @@ body .gameContainer .menu__themes {
   bottom: 0;
   border-radius: 0 20px 0 0;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 body .gameContainer .menu__themes button {
@@ -272,11 +164,11 @@ body .gameContainer .header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-bottom: 5px;
   border-bottom: 3px solid #808080;
 }
@@ -301,12 +193,11 @@ body .gameContainer .header__buttons {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-body .gameContainer .header__buttons-restart,
-body .gameContainer .header__buttons-showMenu {
+body .gameContainer .header__buttons-restart, body .gameContainer .header__buttons-showMenu {
   padding: 10px;
   border: 0;
   background-color: #c0c0c0;
@@ -315,69 +206,67 @@ body .gameContainer .header__buttons-showMenu {
   cursor: pointer;
 }
 
-body .gameContainer .header__buttons-restart i,
-body .gameContainer .header__buttons-showMenu i {
+body .gameContainer .header__buttons-restart i, body .gameContainer .header__buttons-showMenu i {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 
-body .gameContainer .header__buttons-restart:hover i,
-body .gameContainer .header__buttons-showMenu:hover i {
+body .gameContainer .header__buttons-restart:hover i, body .gameContainer .header__buttons-showMenu:hover i {
   -webkit-transform: scale(1.3);
-  transform: scale(1.3);
+          transform: scale(1.3);
 }
 
 body .gameContainer .header__buttons-restart.animate i {
   -webkit-animation: 0.4s animateRestartBtn linear;
-  animation: 0.4s animateRestartBtn linear;
+          animation: 0.4s animateRestartBtn linear;
 }
 
 @-webkit-keyframes animateRestartBtn {
   0% {
     -webkit-transform: rotate(0deg) scale(1);
-    transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
   }
   100% {
     -webkit-transform: rotate(360deg) scale(1.3);
-    transform: rotate(360deg) scale(1.3);
+            transform: rotate(360deg) scale(1.3);
   }
 }
 
 @keyframes animateRestartBtn {
   0% {
     -webkit-transform: rotate(0deg) scale(1);
-    transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
   }
   100% {
     -webkit-transform: rotate(360deg) scale(1.3);
-    transform: rotate(360deg) scale(1.3);
+            transform: rotate(360deg) scale(1.3);
   }
 }
 
 body .gameContainer .header__buttons-showMenu.animate i {
   -webkit-animation: 0.3s animateShowMenuBtn linear;
-  animation: 0.3s animateShowMenuBtn linear;
+          animation: 0.3s animateShowMenuBtn linear;
 }
 
 @-webkit-keyframes animateShowMenuBtn {
   0% {
     -webkit-transform: scale(1);
-    transform: scale(1);
+            transform: scale(1);
   }
   100% {
     -webkit-transform: scale(1.3);
-    transform: scale(1.3);
+            transform: scale(1.3);
   }
 }
 
 @keyframes animateShowMenuBtn {
   0% {
     -webkit-transform: scale(1);
-    transform: scale(1);
+            transform: scale(1);
   }
   100% {
     -webkit-transform: scale(1.3);
-    transform: scale(1.3);
+            transform: scale(1.3);
   }
 }
 
@@ -394,12 +283,12 @@ body .gameContainer .header__buttons-emoji {
 
 body .gameContainer .header__buttons-emoji.negative {
   -webkit-animation: 0.3s negativeEmoji linear both;
-  animation: 0.3s negativeEmoji linear both;
+          animation: 0.3s negativeEmoji linear both;
 }
 
 body .gameContainer .header__buttons-emoji.positive {
   -webkit-animation: 0.3s positiveEmoji linear;
-  animation: 0.3s positiveEmoji linear;
+          animation: 0.3s positiveEmoji linear;
 }
 
 @-webkit-keyframes negativeEmoji {
@@ -452,17 +341,17 @@ body .gameContainer .header__buttons-emoji.positive {
 
 body .gameContainer .board {
   -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   width: 304px;
   padding: 5px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-item-align: center;
-  align-self: center;
+      align-self: center;
 }
 
 body .gameContainer .board__cell {
@@ -475,11 +364,11 @@ body .gameContainer .board__cell {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 30px;
   font-weight: bold;
   cursor: pointer;
@@ -560,7 +449,7 @@ body .gameContainer .panel__buttonsContainer {
 
 body .gameContainer .panel__button-difficulty {
   -ms-flex-preferred-size: 33.333%;
-  flex-basis: 33.333%;
+      flex-basis: 33.333%;
   padding: 2px 15px;
   border: 4px solid;
   border-color: #fff #808080 #808080 #fff;
@@ -574,13 +463,97 @@ body .gameContainer .panel__button-difficulty:hover {
   border-color: #fff #808080 #808080 #fff;
 }
 
-body.night-theme {
-  background-color: blue;
+body .gameContainer .options-window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-color: #c0c0c0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-body.night-theme .game {
-  border: 4px solid #e6e5eb;
-  border-left-width: 2px;
-  border-right-width: 2px;
-  background-color: #21115e;
+body .gameContainer .options-window.active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+body .gameContainer .options-window__title {
+  font-size: 4rem;
+  padding: 15px 0;
+}
+
+body .gameContainer .options-window__content {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .gameContainer .options-window__content__container {
+  padding: 0px 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .gameContainer .options-window__content__title {
+  font-size: 2.3rem;
+}
+
+body .gameContainer .options-window__content p {
+  font-size: 1.5rem;
+}
+
+body .gameContainer .options-window__content input[type="number"] {
+  font-size: 2rem;
+  text-align: center;
+}
+
+body .gameContainer .options-window__content select {
+  padding: 3px 10px;
+  font-size: 1.7rem;
+}
+
+body .gameContainer .options-window__confirm, body .gameContainer .options-window__close {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 200px;
+  margin: 10px 0 0px;
+  padding: 5px 0;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  background-color: #c0c0c0;
+  border-color: #fff #808080 #808080 #fff;
+}
+
+body .gameContainer .options-window__close {
+  background-color: #d44040;
+  color: #fff;
 }

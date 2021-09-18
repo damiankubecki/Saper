@@ -9,11 +9,10 @@ export default class Result {
       const allCellsNumber = this.colsNumber * this.rowsNumber;
       const clickedCellsNumber = this.getClickedCells().length;
 
-      return clickedCellsNumber + bombsNumber === allCellsNumber
-        ? win.bind(this)()
-        : false;
-    };
+      return clickedCellsNumber + bombsNumber === allCellsNumber ? win.bind(this)() : false;
+    }
   }
+
 
   #win() {
     this.disableAllCells();
@@ -24,6 +23,7 @@ export default class Result {
 
     console.log("wygrales");
   }
+
 
   loose(cellClicked) {
     this.revealBoardAfterLoose();

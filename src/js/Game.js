@@ -1,11 +1,12 @@
 import Move from "./Move.js";
 
 export default class Game extends Move {
+
   #difficulty = {
     easy: {
       rows: 8,
       cols: 8,
-      bombs: 3,
+      bombs: 10,
     },
     medium: {
       rows: 16,
@@ -18,6 +19,7 @@ export default class Game extends Move {
       bombs: 99,
     },
   };
+
 
   #itemsSize = {
     small: {
@@ -34,33 +36,48 @@ export default class Game extends Move {
     },
   };
 
-  gameContainer = document.querySelector(".gameContainer");
 
-  constructor(defaultDifficulty, defaultItemsSize) {
+  gameContainer = document.querySelector(".gameContainer");
+  gameBoard = document.querySelector(".board");
+
+
+  constructor({
+    defaultDifficulty,
+    defaultItemsSize,
+    defaultNumberOfCellsToClickOnStart
+  }) {
     super();
 
     this.setDifficulty(defaultDifficulty);
     this.setItemsSize(defaultItemsSize);
+    this.setNumberOfCellsToClickOnStart(defaultNumberOfCellsToClickOnStart)
     this.initializeGame();
   }
+
 
   rowsNumber;
   colsNumber;
   bombsNumber;
-  itemsSize;
   currentDifficulty;
   currentItemsSize;
+  numberOfCellsToClickOnStart;
+
 
   initializeGame() {
     this.newBoard();
-    this.clickEmptyCellOnStart();
+    this.clickEmptyCellOnStart(this.numberOfCellsToClickOnStart);
     this.resetAndStartTimer();
     this.setBombsCounter(this.bombsNumber);
     this.resetEmoji();
   }
 
+
   setDifficulty(diffculty) {
-    const { easy, medium, expert } = this.#difficulty;
+    const {
+      easy,
+      medium,
+      expert
+    } = this.#difficulty;
 
     let configuration;
 
@@ -82,8 +99,13 @@ export default class Game extends Move {
     this.currentDifficulty = diffculty;
   }
 
+
   setItemsSize(size) {
-    const { small, normal, big } = this.#itemsSize;
+    const {
+      small,
+      normal,
+      big
+    } = this.#itemsSize;
 
     switch (size) {
       case "small":
@@ -98,5 +120,10 @@ export default class Game extends Move {
     }
 
     this.currentItemsSize = size;
+  }
+
+
+  setNumberOfCellsToClickOnStart(number) {
+    this.numberOfCellsToClickOnStart = number;
   }
 }

@@ -1,4 +1,4 @@
-.modal {
+.options-window {
   position: fixed;
   top: 0;
   left: 0;
@@ -27,7 +27,7 @@
     flex-direction: column;
 
     &__container {
-      padding: 5px;
+      padding: 0px 0 15px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -56,15 +56,12 @@
   &__close {
     align-self: center;
     width: 200px;
+    margin: 10px 0 0px;
     padding: 5px 0;
     border-radius: 5px;
     font-size: 1.6rem;
     background-color: $primary-color;
     border-color: $border-template;
-  }
-
-  &__confirm {
-    margin: 30px 0 5px;
   }
 
   &__close {
