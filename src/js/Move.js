@@ -4,6 +4,7 @@ import Board from "./Board.js";
 export default class Move extends Board {
   constructor() {
     super();
+
     this.getResult = new Result();
   }
 

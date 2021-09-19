@@ -43,23 +43,19 @@ export default class Config extends Move {
     bombsNumber;
     currentDifficulty;
     currentItemsSize;
-    numberOfCellsToClickOnStart;
+    numberOfClicksOnStart;
 
-    // rowsNumber = {
-    //     number: null,
-    //     setNumber: number => this.rowsNumber = number,
-    //     getNumber: () => this.rowsNumber
-    // }
 
-    // colsNumber = {
-    //     number: null,
-    //     set: function (number) { 
-    //         this.number = number;
-    //     },
-    //     get: function () {
-    //         return this.number;
-    //     },
-    // }
+    #setRowsNumber = number => this.rowsNumber = number;
+    getRowsNumber = () => this.rowsNumber;
+
+
+    #setColsNumber = number => this.colsNumber = number;
+    getColsNumber = () => this.colsNumber;
+
+
+    #setBombsNumber = number => this.bombsNumber = number;
+    getBombsNumber = () => this.bombsNumber;
 
 
     setDifficulty(diffculty) {
@@ -83,14 +79,11 @@ export default class Config extends Move {
                 break;
         }
 
-        // this.rows.setNumber(configuration.rows);
-        // this.cols.setNumber(5);
-        this.rowsNumber = configuration.rows;
-        this.colsNumber = configuration.cols;
-        this.bombsNumber = configuration.bombs;
+        this.#setRowsNumber(configuration.rows);
+        this.#setColsNumber(configuration.cols);
+        this.#setBombsNumber(configuration.bombs);
         this.currentDifficulty = diffculty;
     }
-
     getCurrentDifficulty = () => this.currentDifficulty;
 
 
@@ -115,13 +108,11 @@ export default class Config extends Move {
 
         this.currentItemsSize = size;
     }
-
     getCurrentItemsSize = () => this.currentItemsSize;
 
 
-    setNumberOfCellsToClickOnStart(number) {
-        this.numberOfCellsToClickOnStart = number;
+    setNumberOfClicksOnStart(number) {
+        this.numberOfClicksOnStart = number;
     }
-
-    getNumberOfCellsToClickOnStart = () => this.numberOfCellsToClickOnStart;
+    getNumberOfClicksOnStart = () => this.numberOfClicksOnStart;
 }

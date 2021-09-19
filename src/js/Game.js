@@ -8,22 +8,25 @@ export default class Game extends Config {
   constructor({
     defaultDifficulty,
     defaultItemsSize,
-    defaultNumberOfCellsToClickOnStart
+    defaultNumberOfClicksOnStart
   }) {
     super();
 
     this.setDifficulty(defaultDifficulty);
     this.setItemsSize(defaultItemsSize);
-    this.setNumberOfCellsToClickOnStart(defaultNumberOfCellsToClickOnStart)
+    this.setNumberOfClicksOnStart(defaultNumberOfClicksOnStart)
     this.initializeGame();
   }
 
 
   initializeGame() {
+    const clicksOnStart = this.getNumberOfClicksOnStart();
+    const bombsNumber = this.getBombsNumber();
+
     this.newBoard();
-    this.clickEmptyCellOnStart(this.numberOfCellsToClickOnStart);
+    this.clickEmptyCellOnStart(clicksOnStart);
     this.resetAndStartTimer();
-    this.setBombsCounter(this.bombsNumber);
+    this.setBombsCounter(bombsNumber);
     this.resetEmoji();
   }
 }

@@ -5,5 +5,5 @@ const proto = new Proto();
 const game = new Game({
     defaultDifficulty: "easy",
     defaultItemsSize: "normal",
-    defaultNumberOfCellsToClickOnStart: 1
+    defaultNumberOfClicksOnStart: 1
 });
