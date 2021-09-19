@@ -63,12 +63,18 @@ export default class Menu {
 
 
   #openGameSettingsWindow(actionBtn) {
-    actionBtn.addEventListener("click", () => new Window(this, gameSettingsWindow));
+    actionBtn.addEventListener("click", () => {
+      this.#closeOpenWindow();
+      new Window(this, gameSettingsWindow);
+    });
   }
 
 
   #openCustomGameWindow(actionBtn) {
-    actionBtn.addEventListener("click", () => this.newWindow(customGameWindow));
+    actionBtn.addEventListener("click", () => {
+      this.#closeOpenWindow();
+      new Window(this, customGameWindow);
+    });
   }
 
 
@@ -81,12 +87,17 @@ export default class Menu {
 
 
   //more abstract functions below
+  #closeOpenWindow() {
+    const window = document.querySelector(".options-window");
+    window.classList.remove('active');
+  }
+
+
   #toggleFullScreen() {
     const isBrowserInFullscreen = window.innerWidth == screen.width && window.innerHeight == screen.height;
 
     isBrowserInFullscreen ? this.#closeFullscreen() : this.#openFullscreen();
   }
-
 
   #openFullscreen() {
     const elem = document.documentElement;
@@ -101,7 +112,6 @@ export default class Menu {
       elem.msRequestFullscreen();
     }
   }
-
 
   #closeFullscreen() {
     if (document.exitFullscreen) {

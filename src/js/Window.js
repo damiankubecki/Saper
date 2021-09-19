@@ -9,17 +9,20 @@ export default class Window {
 
     const renderWindow = () => {
       openWindow();
-      renderContent(title, content);
+      renderTitle(title)
+      renderContent(content);
       renderFunction(game);
       addCloseBtnListener();
     }
 
-    const renderContent = (title, content) => {
-      const windowTitle = document.querySelector('.options-window__title');
-      windowTitle.innerHTML = title;
+    const renderTitle = title => {
+      const titleField = document.querySelector('.options-window__title');
+      titleField.innerHTML = title;
+    }
 
-      const windowContent = document.querySelector('.options-window__content');
-      windowContent.innerHTML = content;
+    const renderContent = content => {
+      const contentField = document.querySelector('.options-window__content');
+      contentField.innerHTML = content;
     }
 
     const addCloseBtnListener = () => {

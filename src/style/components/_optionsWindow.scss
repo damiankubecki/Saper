@@ -50,6 +50,7 @@
     & select {
       padding: 3px 10px;
       font-size: 1.7rem;
+      cursor: pointer;
     }
   }
 
@@ -68,6 +69,12 @@
     font-size: 1.6rem;
     background-color: $primary-color;
     border-color: $border-template;
+    cursor: pointer;
+    transition: .1s;
+
+    &:hover {
+      transform: scale(1.1) rotate(.5deg);
+    }
   }
 
   &__close {

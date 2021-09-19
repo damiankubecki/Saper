@@ -99,6 +99,8 @@ export default class Game extends Move {
     this.currentDifficulty = diffculty;
   }
 
+  getCurrentDifficulty = () => this.currentDifficulty;
+
 
   setItemsSize(size) {
     const {
