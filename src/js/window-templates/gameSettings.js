@@ -42,7 +42,7 @@ class WindowProps {
     #setSelectedOption() {
         const game = this.#game;
 
-        const currentItemsSize = game.getItemsSize();
+        const currentItemsSize = game.getCurrentItemsSize();
         const allOptions = [...document.querySelectorAll('#items-size > option')];
         const optionToSetSelected = allOptions.find(option => option.value === currentItemsSize);
         optionToSetSelected.selected = 'selected';
