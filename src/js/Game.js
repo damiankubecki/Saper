@@ -122,8 +122,12 @@ export default class Game extends Move {
     this.currentItemsSize = size;
   }
 
+  getItemsSize = () => this.currentItemsSize;
+
 
   setNumberOfCellsToClickOnStart(number) {
     this.numberOfCellsToClickOnStart = number;
   }
+
+  getNumberOfCellsToClickOnStart = () => this.numberOfCellsToClickOnStart;
 }

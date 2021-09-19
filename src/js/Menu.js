@@ -2,9 +2,8 @@ import Window from "./Window.js";
 import gameSettingsWindow from "./window-templates/gameSettings.js";
 import customGameWindow from './window-templates/customGame.js';
 
-export default class Menu extends Window {
+export default class Menu {
   constructor() {
-    super();
     this.#renderMenu();
   }
 
@@ -64,7 +63,7 @@ export default class Menu extends Window {
 
 
   #openGameSettingsWindow(actionBtn) {
-    actionBtn.addEventListener("click", () => this.newWindow(gameSettingsWindow));
+    actionBtn.addEventListener("click", () => new Window(this, gameSettingsWindow));
   }
 
 
