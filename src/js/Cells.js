@@ -38,7 +38,7 @@ export default class Cells extends Panel {
   getEmptyCells() {
     const allCells = this.getAllCells();
 
-    return allCells.filter(cell => cell.dataset.near === "0" && cell.dataset.bomb === "0");
+    return allCells.filter(cell => cell.dataset.near === "0" && cell.dataset.bomb === "0" && !cell.classList.contains('clicked'));
   }
 
 

@@ -37,12 +37,13 @@
       font-size: 2.3rem;
     }
 
-    & p {
+    &__paragraph {
       font-size: 1.5rem;
     }
 
     & input[type="number"] {
       font-size: 2rem;
+      width: 10rem;
       text-align: center;
     }
 
@@ -50,6 +51,11 @@
       padding: 3px 10px;
       font-size: 1.7rem;
     }
+  }
+
+  &__note {
+    font-size: 1.4rem;
+    text-align: center;
   }
 
   &__confirm,

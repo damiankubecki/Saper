@@ -377,7 +377,7 @@ body .gameContainer .board__cell {
   background-repeat: no-repeat;
 }
 
-body .gameContainer .board__cell[data-bomb="1"].clicked {
+body .gameContainer .board__cell[data-bomb="1"] {
   background-image: url(../../images/bomb.png);
 }
 
@@ -526,18 +526,24 @@ body .gameContainer .options-window__content__title {
   font-size: 2.3rem;
 }
 
-body .gameContainer .options-window__content p {
+body .gameContainer .options-window__content__paragraph {
   font-size: 1.5rem;
 }
 
 body .gameContainer .options-window__content input[type="number"] {
   font-size: 2rem;
+  width: 10rem;
   text-align: center;
 }
 
 body .gameContainer .options-window__content select {
   padding: 3px 10px;
   font-size: 1.7rem;
+}
+
+body .gameContainer .options-window__note {
+  font-size: 1.4rem;
+  text-align: center;
 }
 
 body .gameContainer .options-window__confirm, body .gameContainer .options-window__close {

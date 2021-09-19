@@ -11,16 +11,33 @@ const content = `
         <option value="big">Duży</option>
     </select>
 </div>
+<p class="options-window__note">*zmiany zostaną uwzględnione od następnej gry</p>
 <button class="options-window__confirm">Potwierdź</button>
 `;
 
+
+// function renderFunction() {
+
+// }
+
+
 function buttonConfirmFunction() {
-    console.log('aaaa dzialam');
+    const inputClicksOnStart = document.querySelector('#clicks-onstart');
+    const newNumberOfClickOnStart = inputClicksOnStart.value * 1;
+
+    this.setNumberOfCellsToClickOnStart(newNumberOfClickOnStart);
+    console.log(this.numberOfCellsToClickOnStart)
+}
+
+class gameSettings {
+    constructor() {
+        this.title = 'Opcje'
+    }
 }
 
 export default {
     title: 'Opcje',
     content: content,
-    isConfirmButton: true,
+    renderFunction: false,
     buttonConfirmFunction: buttonConfirmFunction
 }

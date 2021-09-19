@@ -19,6 +19,9 @@ export default class Menu extends Window {
     const settingsBtn = document.querySelector("#settings");
     this.#openGameSettingsWindow(settingsBtn);
 
+    const customGameBtn = document.querySelector('#custom-game');
+    this.#openCustomGameWindow(customGameBtn);
+
     const themesBtns = [...document.querySelectorAll(".menu__themes > button")];
     this.#changeTheme([...themesBtns]);
   }

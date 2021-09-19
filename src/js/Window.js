@@ -7,14 +7,15 @@ export default class Window {
     const {
       title,
       content,
-      isConfirmButton,
+      renderFunction,
       buttonConfirmFunction
     } = windowProperties;
 
     this.#openWindow();
     this.#renderContent(title, content);
-    if (isConfirmButton) this.#listeningForConfirmBtn(buttonConfirmFunction);
-    this.#listeningForCloseBtn();
+    if (renderFunction) renderFunction();
+    if (buttonConfirmFunction) this.#addConfirmBtnListener(buttonConfirmFunction);
+    this.#addCloseBtnListener();
   }
 
 
@@ -27,13 +28,13 @@ export default class Window {
   }
 
 
-  #listeningForConfirmBtn(btnFunction) {
+  #addConfirmBtnListener(btnFunction) {
     const confirmBtn = document.querySelector('.options-window__confirm');
-    confirmBtn.addEventListener('click', () => btnFunction());
+    confirmBtn.addEventListener('click', () => btnFunction.bind(this)());
   }
 
 
-  #listeningForCloseBtn() {
+  #addCloseBtnListener() {
     const closeWindowBtn = document.querySelector(".options-window__close");
     closeWindowBtn.addEventListener("click", () => this.#closeWindow());
   }

@@ -22,7 +22,7 @@
       background-position: center;
       background-repeat: no-repeat;
 
-      &[data-bomb="1"].clicked {
+      &[data-bomb="1"] {
         background-image: url(../../images/bomb.png);
       }
 
