@@ -14,7 +14,7 @@ export default class Game extends Config {
 
     this.setDifficulty(defaultDifficulty);
     this.setItemsSize(defaultItemsSize);
-    this.setNumberOfClicksOnStart(defaultNumberOfClicksOnStart)
+    this.setNumberOfClicksOnStart(defaultNumberOfClicksOnStart);
     this.initializeGame();
   }
 
