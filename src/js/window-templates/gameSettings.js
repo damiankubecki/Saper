@@ -2,24 +2,24 @@ class WindowProps {
     constructor() {
         this.title = 'Opcje';
         this.content = `
-        <div class="options-window__content__container">
-            <h3 class="options-window__content__title">Ilość kliknięć na start</h3>
+        <div class="window__content__container">
+            <h4 class="window__content__subtitle">Ilość kliknięć na start</h4>
             <input type="number" id="clicks-onstart"/>
         </div>
-        <div class="options-window__content__container">
-            <h3 class="options-window__content__title">Rozmiar komórek</h3>
+        <div class="window__content__container">
+            <h4 class="window__content__subtitle">Rozmiar komórek</h4>
             <select id="items-size">
                 <option value="small">Mały</option>
                 <option value="normal" selected>Średni</option>
                 <option value="big">Duży</option>
             </select>
         </div>
-        <p class="options-window__note">*zmiany zostaną uwzględnione od następnej gry</p>
-        <button class="options-window__confirm">Potwierdź</button>
+        <p class="window__note">*zmiany zostaną uwzględnione od następnej gry</p>
+        <button class="window__confirm">Potwierdź</button>
         `;
         this.windowFunctions = game => {
             this.#game = game;
-            this.#confirmBtn = document.querySelector('.options-window__confirm');
+            this.#confirmBtn = document.querySelector('.window__confirm');
             this.#fillFields();
             this.#addConfirmListener();
         }
@@ -91,7 +91,7 @@ class WindowProps {
     }
 
     #closeWindow() {
-        const optionsWindow = document.querySelector(".options-window");
+        const optionsWindow = document.querySelector(".window");
 
         optionsWindow.classList.remove("active");
     }

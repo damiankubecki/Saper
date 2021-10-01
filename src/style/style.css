@@ -463,7 +463,7 @@ body .gameContainer .panel__button-difficulty:hover {
   border-color: #fff #808080 #808080 #fff;
 }
 
-body .gameContainer .options-window {
+body .gameContainer .window {
   position: fixed;
   top: 0;
   left: 0;
@@ -487,17 +487,17 @@ body .gameContainer .options-window {
   transition: .3s;
 }
 
-body .gameContainer .options-window.active {
+body .gameContainer .window.active {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 
-body .gameContainer .options-window__title {
+body .gameContainer .window__title {
   font-size: 4rem;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
-body .gameContainer .options-window__content {
+body .gameContainer .window__content {
   width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -508,8 +508,8 @@ body .gameContainer .options-window__content {
           flex-direction: column;
 }
 
-body .gameContainer .options-window__content__container {
-  padding: 0px 0 15px;
+body .gameContainer .window__content__container {
+  padding: 0px 0 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -522,32 +522,37 @@ body .gameContainer .options-window__content__container {
           align-items: center;
 }
 
-body .gameContainer .options-window__content__title {
+body .gameContainer .window__content__title {
   font-size: 2.3rem;
 }
 
-body .gameContainer .options-window__content__paragraph {
+body .gameContainer .window__content__subtitle {
+  font-size: 2rem;
+  padding-top: 5px;
+}
+
+body .gameContainer .window__content__paragraph {
   font-size: 1.5rem;
 }
 
-body .gameContainer .options-window__content input[type="number"] {
+body .gameContainer .window__content input[type="number"] {
   font-size: 2rem;
   width: 10rem;
   text-align: center;
 }
 
-body .gameContainer .options-window__content select {
+body .gameContainer .window__content select {
   padding: 3px 10px;
   font-size: 1.7rem;
   cursor: pointer;
 }
 
-body .gameContainer .options-window__note {
+body .gameContainer .window__note {
   font-size: 1.4rem;
   text-align: center;
 }
 
-body .gameContainer .options-window__confirm, body .gameContainer .options-window__close {
+body .gameContainer .window__confirm, body .gameContainer .window__close {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -563,12 +568,12 @@ body .gameContainer .options-window__confirm, body .gameContainer .options-windo
   transition: .1s;
 }
 
-body .gameContainer .options-window__confirm:hover, body .gameContainer .options-window__close:hover {
+body .gameContainer .window__confirm:hover, body .gameContainer .window__close:hover {
   -webkit-transform: scale(1.1) rotate(0.5deg);
           transform: scale(1.1) rotate(0.5deg);
 }
 
-body .gameContainer .options-window__close {
+body .gameContainer .window__close {
   background-color: #d44040;
   color: #fff;
 }

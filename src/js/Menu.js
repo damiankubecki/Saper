@@ -88,7 +88,7 @@ export default class Menu {
 
   //more abstract functions below
   #closeOpenWindow() {
-    const window = document.querySelector(".options-window");
+    const window = document.querySelector(".window");
     window.classList.remove('active');
   }
 

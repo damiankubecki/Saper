@@ -1,6 +1,6 @@
 export default class Window {
   constructor(game, windowProperties) {
-    const optionsWindow = document.querySelector(".options-window");
+    const window = document.querySelector(".window");
     const {
       title,
       content,
@@ -16,26 +16,26 @@ export default class Window {
     }
 
     const renderTitle = title => {
-      const titleField = document.querySelector('.options-window__title');
+      const titleField = document.querySelector('.window__title');
       titleField.innerHTML = title;
     }
 
     const renderContent = content => {
-      const contentField = document.querySelector('.options-window__content');
+      const contentField = document.querySelector('.window__content');
       contentField.innerHTML = content;
     }
 
     const addCloseBtnListener = () => {
-      const closeWindowBtn = document.querySelector(".options-window__close");
+      const closeWindowBtn = document.querySelector(".window__close");
       closeWindowBtn.addEventListener("click", () => closeWindow());
     }
 
     const openWindow = () => {
-      optionsWindow.classList.add("active");
+      window.classList.add("active");
     }
 
     const closeWindow = () => {
-      optionsWindow.classList.remove("active");
+      window.classList.remove("active");
     }
 
     renderWindow();
