@@ -12,7 +12,8 @@ export default class Move extends Board {
   clickEmptyCellOnStart(quantity) {
     for (let i = 0; i < quantity; i++) {
       const emptyCells = this.getEmptyCells();
-      if (emptyCells.length) {
+      const isEmptyCell = !!emptyCells.length;
+      if (isEmptyCell) {
         const randomEmptyCell = emptyCells.random();
         this.clickCell(randomEmptyCell);
       } else return;

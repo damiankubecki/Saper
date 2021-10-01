@@ -1,6 +1,10 @@
 import Move from "./Move.js";
 
 export default class Config extends Move {
+
+    gameContainer = document.querySelector(".gameContainer");
+    gameBoard = document.querySelector(".board");
+
     constructor() {
         super();
     }

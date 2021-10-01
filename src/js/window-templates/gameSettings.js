@@ -18,13 +18,15 @@ class WindowProps {
         <button class="options-window__confirm">Potwierdź</button>
         `;
         this.windowFunctions = game => {
-            this.#game = game
+            this.#game = game;
+            this.#confirmBtn = document.querySelector('.options-window__confirm');
             this.#fillFields();
             this.#addConfirmListener();
         }
     }
 
     #game;
+    #confirmBtn;
 
 
     #fillFields() {
@@ -33,9 +35,7 @@ class WindowProps {
     }
 
     #addConfirmListener() {
-        const confirmBtn = document.querySelector('.options-window__confirm');
-
-        confirmBtn.addEventListener('click', () => this.#confirmListener());
+        this.#confirmBtn.addEventListener('click', () => this.#confirmListener());
     }
 
 
@@ -67,7 +67,6 @@ class WindowProps {
         this.#game.setNumberOfClicksOnStart(selectedClicksOnStart);
         this.#game.setItemsSize(selectedItemsSize);
         this.#changeBtnAction();
-        // this.#closeWindow();
     }
 
     #getEnteredClicksOnStart() {
@@ -83,10 +82,9 @@ class WindowProps {
     }
 
     #changeBtnAction() {
-        const confirmBtn = document.querySelector('.options-window__confirm');
-        confirmBtn.textContent = 'Nowa gra';
+        this.#confirmBtn.textContent = 'Nowa gra';
 
-        confirmBtn.addEventListener('click', () => {
+        this.#confirmBtn.addEventListener('click', () => {
             this.#closeWindow();
             this.#game.initializeGame();
         });

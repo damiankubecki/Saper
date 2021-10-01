@@ -1,10 +1,6 @@
 import Config from "./Config.js";
 
 export default class Game extends Config {
-
-  gameContainer = document.querySelector(".gameContainer");
-  gameBoard = document.querySelector(".board");
-
   constructor({
     defaultDifficulty,
     defaultItemsSize,
