@@ -88,7 +88,10 @@ export default class Board extends Cells {
   #matchBodyToBoardSize() {
     const gameHeight = this.gameContainer.offsetHeight;
     const gameMargin = 100;
+    const gameWidth = this.gameContainer.offsetWidth;
     const windowHeight = window.innerHeight;
+
+    document.body.style.minWidth = gameWidth + 150 + 'px';
 
     if (gameHeight + gameMargin > windowHeight) {
       document.body.style.minHeight = gameHeight + gameMargin + "px";

@@ -531,6 +531,11 @@ body .gameContainer .window__content__subtitle {
   padding-top: 5px;
 }
 
+body .gameContainer .window__content__subtitle span {
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
 body .gameContainer .window__content__paragraph {
   font-size: 1.5rem;
 }
