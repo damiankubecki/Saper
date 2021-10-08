@@ -125,10 +125,10 @@ export default class Board extends Cells {
 
     for (let i = 0; i < bombsNumber; i++) {
       const emptyCells = this.getEmptyCells();
-
       const randomCell = emptyCells.random();
-      randomCell.dataset.bomb = 1;
-      randomCell.dataset.near = 0;
+
+      this.setCellBombDataset(randomCell, 1);
+      this.setCellNearDataset(randomCell, 0);
     }
   }
 
@@ -139,7 +139,7 @@ export default class Board extends Cells {
       const cellsAround = this.getCellsAround(cell);
       const numberOfBombsAroundCell = this.getNumberOfBombsInCells(...cellsAround);
 
-      cell.dataset.near = numberOfBombsAroundCell;
-    });
+      this.setCellNearDataset(cell, numberOfBombsAroundCell);
+    })
   }
 }

@@ -72,6 +72,14 @@ export default class Cells extends Panel {
     return cellsAround.filter(cell => cell !== undefined);
   }
 
+  setCellNearDataset(cell, value) {
+    cell.dataset.near = value;
+  }
+
+  setCellBombDataset(cell, value) {
+    cell.dataset.bomb = value;
+  }
+
   markCellAsClicked(cell) {
     cell.classList.add('clicked');
     this.#setQuantityOfBombsNearCell(cell);
