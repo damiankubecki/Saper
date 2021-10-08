@@ -1,9 +1,9 @@
-import Move from "./Move.js";
+import Move from './Move.js';
 
 export default class Config extends Move {
 
-    gameContainer = document.querySelector(".gameContainer");
-    gameBoard = document.querySelector(".board");
+    gameContainer = document.querySelector('.gameContainer');
+    gameBoard = document.querySelector('.board');
 
     constructor() {
         super();
@@ -72,13 +72,13 @@ export default class Config extends Move {
         let configuration;
 
         switch (diffculty) {
-            case "easy":
+            case 'easy':
                 configuration = easy;
                 break;
-            case "medium":
+            case 'medium':
                 configuration = medium;
                 break;
-            case "expert":
+            case 'expert':
                 configuration = expert;
                 break;
         }
@@ -99,13 +99,13 @@ export default class Config extends Move {
         } = this.#itemsSize;
 
         switch (size) {
-            case "small":
+            case 'small':
                 this.itemsSize = small;
                 break;
-            case "normal":
+            case 'normal':
                 this.itemsSize = normal;
                 break;
-            case "big":
+            case 'big':
                 this.itemsSize = big;
                 break;
         }

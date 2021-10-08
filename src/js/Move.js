@@ -1,5 +1,5 @@
-import Result from "./Result.js";
-import Board from "./Board.js";
+import Result from './Result.js';
+import Board from './Board.js';
 
 export default class Move extends Board {
   constructor() {
@@ -30,10 +30,10 @@ export default class Move extends Board {
     if (isCellABomb) {
       this.getResult.loose.bind(this, cell)();
     } else if (isBombNearCell) {
-      this.emojiAnimation("positive");
+      this.emojiAnimation('positive');
       this.getResult.checkWin.bind(this)();
     } else {
-      this.emojiAnimation("positive");
+      this.emojiAnimation('positive');
       this.#revealCellsAroundEmptyCell(cell);
     }
   }

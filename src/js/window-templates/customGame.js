@@ -54,3 +54,4 @@ export default {
     content: window.content,
     renderFunction: window.windowFunctions
 }
+

@@ -1,4 +1,4 @@
-import Cells from "./Cells.js";
+import Cells from './Cells.js';
 
 export default class Board extends Cells {
 
@@ -10,33 +10,41 @@ export default class Board extends Cells {
     this.#renderListeningToCells();
   }
 
-
   revealBoardAfterLoose() {
-    const cellsWithBomb = this.getCellsWithBomb();
-    cellsWithBomb.forEach(cell => this.isCellFlagged(cell) ? undefined : this.markCellAsClicked(cell));
-
-    const flaggedCells = this.getFlaggedCells();
-    flaggedCells.forEach(cell => this.isCellABomb(cell) ? undefined : cell.classList.add("no-bomb"));
+    this.#revealBombs();
+    this.#revealFlaggedCellsNoBomb();
   }
 
-
-  restartGame() {
-    this.initializeGame();
-    this.animateRestartButton();
-  }
 
 
   resetGamePosition() {
-    this.gameContainer.style.left = "50%";
+    this.gameContainer.style.left = '50%';
     this.gameContainer.style.top = 0;
   }
 
 
-  #setBoardWidth() {
-    this.gameBoard.textContent = "";
-    this.gameBoard.style.width = `${this.itemsSize.cell * this.colsNumber}px`;
+  #revealBombs() {
+    const cellsWithBomb = this.getCellsWithBomb();
+    cellsWithBomb.forEach(cell => {
+      if (!this.isCellFlagged(cell)) {
+        this.markCellAsClicked(cell);
+      }
+    })
   }
 
+  #revealFlaggedCellsNoBomb() {
+    const flaggedCells = this.getFlaggedCells();
+    flaggedCells.forEach(cell => {
+      if (!this.isCellABomb(cell)) {
+        this.markCellAsFakeBomb(cell);
+      }
+    })
+  }
+
+  #setBoardWidth() {
+    this.gameBoard.textContent = '';
+    this.gameBoard.style.width = `${this.itemsSize.cell * this.colsNumber}px`;
+  }
 
   #renderCellsOnBoard() {
     for (let i = 0; i < this.rowsNumber * this.colsNumber; i++) {
@@ -45,15 +53,14 @@ export default class Board extends Cells {
     }
   }
 
-
   #renderListeningToCells() {
     const allCells = this.getAllCells();
 
-    allCells.forEach(cell => cell.addEventListener("click", () => {
+    allCells.forEach(cell => cell.addEventListener('click', () => {
       this.isCellFlagged(cell) ? undefined : this.clickCell(cell);
     }));
 
-    allCells.forEach(cell => cell.addEventListener("contextmenu", e => {
+    allCells.forEach(cell => cell.addEventListener('contextmenu', e => {
       e.preventDefault();
       this.toggleFlagMarkOnCell(cell);
       const numberOfBombsToDisplay = this.getBombsLeft();
@@ -61,10 +68,9 @@ export default class Board extends Cells {
     }));
   }
 
-
   #addDatasetToCells() {
     const cells = this.getAllCells();
-    const cols = this.colsNumber;
+    const cols = this.getColsNumber();
 
     let currentX = 1;
     let currentY = 1;
@@ -84,7 +90,6 @@ export default class Board extends Cells {
     this.#setNumberOfBombsNearCells();
   }
 
-
   #matchBodyToBoardSize() {
     const gameHeight = this.gameContainer.offsetHeight;
     const gameMargin = 100;
@@ -94,21 +99,19 @@ export default class Board extends Cells {
     document.body.style.minWidth = gameWidth + 150 + 'px';
 
     if (gameHeight + gameMargin > windowHeight) {
-      document.body.style.minHeight = gameHeight + gameMargin + "px";
-    } else document.body.style.minHeight = "100vh";
+      document.body.style.minHeight = gameHeight + gameMargin + 'px';
+    } else document.body.style.minHeight = '100vh';
   }
 
-
   #createNewCell() {
-    const cell = document.createElement("div");
-    cell.classList.add("board__cell");
+    const cell = document.createElement('div');
+    cell.classList.add('board__cell');
     cell.style.height = `${this.itemsSize.cell}px`;
     cell.style.width = `${this.itemsSize.cell}px`;
     cell.style.fontSize = `${this.itemsSize.font}px`;
 
     return cell;
   }
-
 
   #addBombToRandomCells() {
     const bombs = this.bombsNumber;
@@ -121,7 +124,6 @@ export default class Board extends Cells {
       randomCell.dataset.near = 0;
     }
   }
-
 
   #setNumberOfBombsNearCells() {
     const noBombCells = this.getNoBombCells();

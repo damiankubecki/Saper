@@ -1,5 +1,5 @@
-import Window from "./Window.js";
-import gameSettingsWindow from "./window-templates/gameSettings.js";
+import Window from './Window.js';
+import gameSettingsWindow from './window-templates/gameSettings.js';
 import customGameWindow from './window-templates/customGame.js';
 
 export default class Menu {
@@ -9,19 +9,19 @@ export default class Menu {
 
 
   #renderMenu() {
-    const moveBoardBtn = document.querySelector("#move-board");
+    const moveBoardBtn = document.querySelector('#move-board');
     this.#moveBoard(moveBoardBtn);
 
-    const fullscreenBtn = document.querySelector("#fullscreen");
+    const fullscreenBtn = document.querySelector('#fullscreen');
     this.#fullScreen(fullscreenBtn);
 
-    const settingsBtn = document.querySelector("#settings");
+    const settingsBtn = document.querySelector('#settings');
     this.#openGameSettingsWindow(settingsBtn);
 
     const customGameBtn = document.querySelector('#custom-game');
     this.#openCustomGameWindow(customGameBtn);
 
-    const themesBtns = [...document.querySelectorAll(".menu__themes > button")];
+    const themesBtns = [...document.querySelectorAll('.menu__themes > button')];
     this.#changeTheme([...themesBtns]);
   }
 
@@ -31,15 +31,15 @@ export default class Menu {
     let x = 0;
     let y = 0;
 
-    actionBtn.addEventListener("mousedown", e => {
+    actionBtn.addEventListener('mousedown', e => {
       mousedown = true;
       x = this.gameContainer.offsetLeft - e.clientX;
       y = this.gameContainer.offsetTop - e.clientY;
     });
 
-    actionBtn.addEventListener("mouseup", () => mousedown = false);
+    actionBtn.addEventListener('mouseup', () => mousedown = false);
 
-    window.addEventListener("mousemove", e => {
+    window.addEventListener('mousemove', e => {
       if (mousedown) {
         const rightWall = e.clientX < document.body.offsetWidth - this.gameContainer.offsetWidth - 75;
         const downWall = e.clientY < document.body.offsetHeight - this.gameContainer.offsetHeight + 30;
@@ -47,23 +47,23 @@ export default class Menu {
         if (downWall && rightWall) {
           const boardMargin = 40;
 
-          this.gameContainer.style.left = e.clientX + x + "px";
-          this.gameContainer.style.top = e.clientY + y - boardMargin + "px";
+          this.gameContainer.style.left = e.clientX + x + 'px';
+          this.gameContainer.style.top = e.clientY + y - boardMargin + 'px';
         }
       }
     });
 
-    window.addEventListener("click", () => (mousedown = false));
+    window.addEventListener('click', () => (mousedown = false));
   }
 
 
   #fullScreen(actionBtn) {
-    actionBtn.addEventListener("click", () => this.#toggleFullScreen());
+    actionBtn.addEventListener('click', () => this.#toggleFullScreen());
   }
 
 
   #openGameSettingsWindow(actionBtn) {
-    actionBtn.addEventListener("click", () => {
+    actionBtn.addEventListener('click', () => {
       this.#closeOpenWindow();
       new Window(this, gameSettingsWindow);
     });
@@ -71,7 +71,7 @@ export default class Menu {
 
 
   #openCustomGameWindow(actionBtn) {
-    actionBtn.addEventListener("click", () => {
+    actionBtn.addEventListener('click', () => {
       this.#closeOpenWindow();
       new Window(this, customGameWindow);
     });
@@ -79,8 +79,8 @@ export default class Menu {
 
 
   #changeTheme(actionBtns) {
-    actionBtns.forEach(btn => btn.addEventListener("click", () => {
-      document.body.removeAttribute("class");
+    actionBtns.forEach(btn => btn.addEventListener('click', () => {
+      document.body.removeAttribute('class');
       document.body.classList.add(btn.id);
     }));
   }
@@ -88,7 +88,7 @@ export default class Menu {
 
   //more abstract functions below
   #closeOpenWindow() {
-    const window = document.querySelector(".window");
+    const window = document.querySelector('.window');
     window.classList.remove('active');
   }
 

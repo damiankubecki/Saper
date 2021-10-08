@@ -1,4 +1,4 @@
-import Config from "./Config.js";
+import Config from './Config.js';
 
 export default class Game extends Config {
   constructor({
@@ -24,5 +24,10 @@ export default class Game extends Config {
     this.resetAndStartTimer();
     this.setBombsCounter(bombsNumber);
     this.resetEmoji();
+  }
+
+  restartGame() {
+    this.initializeGame();
+    this.animateRestartButton();
   }
 }
