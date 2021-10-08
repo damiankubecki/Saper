@@ -60,30 +60,37 @@ export default class Config extends Move {
     #setBombsNumber = number => this.#bombsNumber = number;
     getBombsNumber = () => this.#bombsNumber;
 
-    setDifficulty(diffculty) {
+    setDifficulty(difficulty, custom = false) {
+        const config = custom ? custom : this.#standardDifficulty(difficulty);
+        const {
+            rows,
+            cols,
+            bombs
+        } = config;
+
+        this.#setRowsNumber(rows);
+        this.#setColsNumber(cols);
+        this.#setBombsNumber(bombs);
+    }
+
+    #standardDifficulty(difficulty) {
         const {
             easy,
             medium,
             expert
         } = this.#difficulty;
 
-        let configuration;
-
-        switch (diffculty) {
+        switch (difficulty) {
             case 'easy':
-                configuration = easy;
+                return easy;
                 break;
             case 'medium':
-                configuration = medium;
+                return medium;
                 break;
             case 'expert':
-                configuration = expert;
+                return expert;
                 break;
         }
-
-        this.#setRowsNumber(configuration.rows);
-        this.#setColsNumber(configuration.cols);
-        this.#setBombsNumber(configuration.bombs);
     }
 
     setItemsSize(size) {

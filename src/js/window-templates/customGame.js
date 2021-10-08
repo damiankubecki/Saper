@@ -14,18 +14,25 @@ class WindowProps {
         `;
         this.windowFunctions = game => {
             this.#game = game;
+            this.#confirmBtn = document.querySelector('.window__confirm');
 
             this.#fillFields();
+            this.#addConfirmListener();
         }
     }
 
     #game;
+    #confirmBtn;
 
 
     #fillFields() {
         this.#fillRowsInput();
         this.#fillColsInput();
         this.#fillBombsInput();
+    }
+
+    #addConfirmListener() {
+        this.#confirmBtn.addEventListener('click', () => this.#confirmListener());
     }
 
     #fillRowsInput() {
@@ -45,14 +52,36 @@ class WindowProps {
         const bombsInput = document.querySelector('#customGame-bombs');
         bombsInput.value = bombsNumber;
     }
+
+    #confirmListener() {
+        const config = this.#getInputsValues();
+        this.#game.setDifficulty(false, config);
+        this.#game.initializeGame();
+        this.#closeWindow();
+    }
+
+    #getInputsValues() {
+        const rowsInput = document.querySelector('#customGame-rows');
+        const colsInput = document.querySelector('#customGame-cols');
+        const bombsInput = document.querySelector('#customGame-bombs');
+
+        return {
+            rows: rowsInput.value * 1,
+            cols: colsInput.value * 1,
+            bombs: bombsInput.value * 1
+        }
+    }
+
+    #closeWindow() {
+        const optionsWindow = document.querySelector(".window");
+        optionsWindow.classList.remove("active");
+    }
 }
 
 const window = new WindowProps();
-
 
 export default {
     title: window.title,
     content: window.content,
     renderFunction: window.windowFunctions
 }
-
