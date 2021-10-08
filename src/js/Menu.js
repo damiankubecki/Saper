@@ -7,7 +7,6 @@ export default class Menu {
     this.#renderMenu();
   }
 
-
   #renderMenu() {
     const moveBoardBtn = document.querySelector('#move-board');
     this.#moveBoard(moveBoardBtn);
@@ -24,7 +23,6 @@ export default class Menu {
     const themesBtns = [...document.querySelectorAll('.menu__themes > button')];
     this.#changeTheme([...themesBtns]);
   }
-
 
   #moveBoard(actionBtn) {
     let mousedown = false;
@@ -56,11 +54,9 @@ export default class Menu {
     window.addEventListener('click', () => (mousedown = false));
   }
 
-
   #fullScreen(actionBtn) {
     actionBtn.addEventListener('click', () => this.#toggleFullScreen());
   }
-
 
   #openGameSettingsWindow(actionBtn) {
     actionBtn.addEventListener('click', () => {
@@ -69,14 +65,12 @@ export default class Menu {
     });
   }
 
-
   #openCustomGameWindow(actionBtn) {
     actionBtn.addEventListener('click', () => {
       this.#closeOpenWindow();
       new Window(this, customGameWindow);
     });
   }
-
 
   #changeTheme(actionBtns) {
     actionBtns.forEach(btn => btn.addEventListener('click', () => {
@@ -85,13 +79,10 @@ export default class Menu {
     }));
   }
 
-
-  //more abstract functions below
   #closeOpenWindow() {
     const window = document.querySelector('.window');
     window.classList.remove('active');
   }
-
 
   #toggleFullScreen() {
     const isBrowserInFullscreen = window.innerWidth == screen.width && window.innerHeight == screen.height;

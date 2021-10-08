@@ -1,5 +1,3 @@
-import Panel from './Panel.js';
-
 export default class Result {
 
   check() {

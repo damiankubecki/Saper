@@ -14,6 +14,7 @@ class WindowProps {
         `;
         this.windowFunctions = game => {
             this.#game = game;
+            
             this.#fillFields();
         }
     }
