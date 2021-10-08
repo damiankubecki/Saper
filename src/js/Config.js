@@ -42,24 +42,23 @@ export default class Config extends Move {
         },
     };
 
-    rowsNumber;
-    colsNumber;
-    bombsNumber;
-    currentDifficulty;
-    currentItemsSize;
-    numberOfClicksOnStart;
+    #rowsNumber;
+    #colsNumber;
+    #bombsNumber;
+    #currentItemsSize;
+    #numberOfClicksOnStart;
 
 
-    #setRowsNumber = number => this.rowsNumber = number;
-    getRowsNumber = () => this.rowsNumber;
+    #setRowsNumber = number => this.#rowsNumber = number;
+    getRowsNumber = () => this.#rowsNumber;
 
 
-    #setColsNumber = number => this.colsNumber = number;
-    getColsNumber = () => this.colsNumber;
+    #setColsNumber = number => this.#colsNumber = number;
+    getColsNumber = () => this.#colsNumber;
 
 
-    #setBombsNumber = number => this.bombsNumber = number;
-    getBombsNumber = () => this.bombsNumber;
+    #setBombsNumber = number => this.#bombsNumber = number;
+    getBombsNumber = () => this.#bombsNumber;
 
 
     setDifficulty(diffculty) {
@@ -86,9 +85,7 @@ export default class Config extends Move {
         this.#setRowsNumber(configuration.rows);
         this.#setColsNumber(configuration.cols);
         this.#setBombsNumber(configuration.bombs);
-        this.currentDifficulty = diffculty;
     }
-    getCurrentDifficulty = () => this.currentDifficulty;
 
 
     setItemsSize(size) {
@@ -110,13 +107,13 @@ export default class Config extends Move {
                 break;
         }
 
-        this.currentItemsSize = size;
+        this.#currentItemsSize = size;
     }
-    getCurrentItemsSize = () => this.currentItemsSize;
+    getCurrentItemsSize = () => this.#currentItemsSize;
 
 
     setNumberOfClicksOnStart(number) {
-        this.numberOfClicksOnStart = number;
+        this.#numberOfClicksOnStart = number;
     }
-    getNumberOfClicksOnStart = () => this.numberOfClicksOnStart;
+    getNumberOfClicksOnStart = () => this.#numberOfClicksOnStart;
 }

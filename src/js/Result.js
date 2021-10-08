@@ -5,8 +5,11 @@ export default class Result {
     const win = this.#win;
 
     this.checkWin = function () {
-      const bombsNumber = this.bombsNumber;
-      const allCellsNumber = this.colsNumber * this.rowsNumber;
+      const rowsNumber = this.getRowsNumber();
+      const colsNumber = this.getColsNumber();
+      const bombsNumber = this.getBombsNumber();
+  
+      const allCellsNumber = colsNumber * rowsNumber;
       const clickedCellsNumber = this.getClickedCells().length;
 
       return clickedCellsNumber + bombsNumber === allCellsNumber ? win.bind(this)() : false;

@@ -15,8 +15,6 @@ export default class Board extends Cells {
     this.#revealFlaggedCellsNoBomb();
   }
 
-
-
   resetGamePosition() {
     this.gameContainer.style.left = '50%';
     this.gameContainer.style.top = 0;
@@ -42,12 +40,17 @@ export default class Board extends Cells {
   }
 
   #setBoardWidth() {
+    const colsNumber = this.getColsNumber();
+
     this.gameBoard.textContent = '';
-    this.gameBoard.style.width = `${this.itemsSize.cell * this.colsNumber}px`;
+    this.gameBoard.style.width = `${this.itemsSize.cell * colsNumber}px`;
   }
 
   #renderCellsOnBoard() {
-    for (let i = 0; i < this.rowsNumber * this.colsNumber; i++) {
+    const rowsNumber = this.getRowsNumber();
+    const colsNumber = this.getColsNumber();
+
+    for (let i = 0; i < rowsNumber * colsNumber; i++) {
       const newCell = this.#createNewCell();
       this.gameBoard.appendChild(newCell);
     }
@@ -114,9 +117,9 @@ export default class Board extends Cells {
   }
 
   #addBombToRandomCells() {
-    const bombs = this.bombsNumber;
+    const bombsNumber = this.getBombsNumber();
 
-    for (let i = 0; i < bombs; i++) {
+    for (let i = 0; i < bombsNumber; i++) {
       const emptyCells = this.getEmptyCells();
 
       const randomCell = emptyCells.random();

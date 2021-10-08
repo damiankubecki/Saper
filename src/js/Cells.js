@@ -16,8 +16,11 @@ export default class Cells extends Panel {
 
   getBombsLeft() {
     const flaggedCells = this.getFlaggedCells();
+    const flaggedCellsNumber = flaggedCells.length;
 
-    const bombsLeft = this.bombsNumber - flaggedCells.length;
+    const bombsNumber = this.getBombsNumber();
+
+    const bombsLeft = bombsNumber - flaggedCellsNumber;
     return bombsLeft;
   }
 
