@@ -1,13 +1,12 @@
 import Move from './Move.js';
 
 export default class Config extends Move {
-
-    gameContainer = document.querySelector('.gameContainer');
-    gameBoard = document.querySelector('.board');
-
     constructor() {
         super();
     }
+
+    gameContainer = document.querySelector('.gameContainer');
+    gameBoard = document.querySelector('.board');
 
     #difficulty = {
         easy: {
@@ -31,14 +30,17 @@ export default class Config extends Move {
         small: {
             cell: 30,
             font: 25,
+            name: 'small'
         },
         normal: {
             cell: 38,
             font: 32,
+            name: 'normal'
         },
         big: {
             cell: 44,
             font: 36,
+            name: 'big'
         },
     };
 
@@ -52,14 +54,11 @@ export default class Config extends Move {
     #setRowsNumber = number => this.#rowsNumber = number;
     getRowsNumber = () => this.#rowsNumber;
 
-
     #setColsNumber = number => this.#colsNumber = number;
     getColsNumber = () => this.#colsNumber;
 
-
     #setBombsNumber = number => this.#bombsNumber = number;
     getBombsNumber = () => this.#bombsNumber;
-
 
     setDifficulty(diffculty) {
         const {
@@ -87,7 +86,6 @@ export default class Config extends Move {
         this.#setBombsNumber(configuration.bombs);
     }
 
-
     setItemsSize(size) {
         const {
             small,
@@ -97,20 +95,17 @@ export default class Config extends Move {
 
         switch (size) {
             case 'small':
-                this.itemsSize = small;
+                this.#currentItemsSize = small;
                 break;
             case 'normal':
-                this.itemsSize = normal;
+                this.#currentItemsSize = normal;
                 break;
             case 'big':
-                this.itemsSize = big;
+                this.#currentItemsSize = big;
                 break;
         }
-
-        this.#currentItemsSize = size;
     }
     getCurrentItemsSize = () => this.#currentItemsSize;
-
 
     setNumberOfClicksOnStart(number) {
         this.#numberOfClicksOnStart = number;

@@ -35,7 +35,6 @@ export default class Panel extends Menu {
       renderPanelListeners();
    }
 
-
    toggleSideBars() {
       const sideBars = document.querySelector('.menu');
       sideBars.classList.toggle('active');
@@ -43,12 +42,10 @@ export default class Panel extends Menu {
       this.animateSideBarsButton();
    }
 
-
    setBombsCounter(bombs) {
       const bombsCounter = document.querySelector('#bombs');
       bombsCounter.textContent = bombs;
    }
-
 
    resetAndStartTimer() {
       let timer = document.querySelector('#timer');
@@ -62,7 +59,6 @@ export default class Panel extends Menu {
       return interval;
    }
 
-
    emojiAnimation(emotion, both = false) {
       const refreshedEmoji = this.resetEmoji();
 
@@ -73,7 +69,6 @@ export default class Panel extends Menu {
       refreshedEmoji.style.animationFillMode = fillMode;
    }
 
-
    resetEmoji() {
       const emoji = document.querySelector('.header__buttons-emoji');
 
@@ -83,13 +78,11 @@ export default class Panel extends Menu {
       return emoji;
    }
 
-
    stopTimer() {
       const old_timer = document.querySelector('#timer');
       const new_timer = old_timer.cloneNode(true);
       old_timer.parentNode.replaceChild(new_timer, old_timer);
    }
-
 
    #resetTimer(timer) {
       const old_timer = timer;
@@ -100,14 +93,12 @@ export default class Panel extends Menu {
       return new_timer;
    }
 
-
    animateRestartButton() {
       const restartButton = document.querySelector('.header__buttons-restart');
       restartButton.classList.remove('animate');
       void restartButton.offsetWidth;
       restartButton.classList.add('animate');
    }
-
 
    animateSideBarsButton() {
       const SideBarsButton = document.querySelector('.header__buttons-showMenu');

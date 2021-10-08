@@ -20,6 +20,7 @@ class WindowProps {
         this.windowFunctions = game => {
             this.#game = game;
             this.#confirmBtn = document.querySelector('.window__confirm');
+
             this.#fillFields();
             this.#addConfirmListener();
         }
@@ -38,7 +39,6 @@ class WindowProps {
         this.#confirmBtn.addEventListener('click', () => this.#confirmListener());
     }
 
-
     #setClicksOnStartInput() {
         const inputClicksOnStart = document.querySelector('#clicks-onstart');
         const numberOfClicksOnStart = this.#game.getNumberOfClicksOnStart();
@@ -52,13 +52,12 @@ class WindowProps {
     }
 
     #findOptionToSelect() {
-        const currentItemsSize = this.#game.getCurrentItemsSize();
+        const currentItemsSize = this.#game.getCurrentItemsSize().name;
         const allOptions = [...document.querySelectorAll('#items-size > option')];
         const optionToSetSelected = allOptions.find(option => option.value === currentItemsSize);
 
         return optionToSetSelected;
     }
-
 
     #confirmListener() {
         const selectedClicksOnStart = this.#getEnteredClicksOnStart();
@@ -92,13 +91,11 @@ class WindowProps {
 
     #closeWindow() {
         const optionsWindow = document.querySelector(".window");
-
         optionsWindow.classList.remove("active");
     }
 }
 
 const window = new WindowProps();
-
 
 export default {
     title: window.title,

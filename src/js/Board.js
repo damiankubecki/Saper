@@ -41,9 +41,10 @@ export default class Board extends Cells {
 
   #setBoardWidth() {
     const colsNumber = this.getColsNumber();
+    const currentCellSize = this.getCurrentItemsSize().cell;
 
     this.gameBoard.textContent = '';
-    this.gameBoard.style.width = `${this.itemsSize.cell * colsNumber}px`;
+    this.gameBoard.style.width = `${currentCellSize * colsNumber}px`;
   }
 
   #renderCellsOnBoard() {
@@ -107,11 +108,14 @@ export default class Board extends Cells {
   }
 
   #createNewCell() {
+    const currentCellSize = this.getCurrentItemsSize().cell;
+    const currentFontSize = this.getCurrentItemsSize().font;
+
     const cell = document.createElement('div');
     cell.classList.add('board__cell');
-    cell.style.height = `${this.itemsSize.cell}px`;
-    cell.style.width = `${this.itemsSize.cell}px`;
-    cell.style.fontSize = `${this.itemsSize.font}px`;
+    cell.style.height = `${currentCellSize}px`;
+    cell.style.width = `${currentCellSize}px`;
+    cell.style.fontSize = `${currentFontSize}px`;
 
     return cell;
   }

@@ -5,9 +5,8 @@ export default class Move extends Board {
   constructor() {
     super();
 
-    this.getResult = new Result();
+    this.result = new Result();
   }
-
 
   clickEmptyCellOnStart(quantity) {
     for (let i = 0; i < quantity; i++) {
@@ -20,22 +19,9 @@ export default class Move extends Board {
     }
   }
 
-
   clickCell(cell) {
     this.markCellAsClicked(cell);
-
-    const isCellABomb = this.isCellABomb(cell);
-    const isBombNearCell = this.isBombNearCell(cell);
-
-    if (isCellABomb) {
-      this.getResult.loose.bind(this, cell)();
-    } else if (isBombNearCell) {
-      this.emojiAnimation('positive');
-      this.getResult.checkWin.bind(this)();
-    } else {
-      this.emojiAnimation('positive');
-      this.#revealCellsAroundEmptyCell(cell);
-    }
+    this.#checkCellAction(cell);
   }
 
 
@@ -57,9 +43,8 @@ export default class Move extends Board {
       });
     } while (emptyCells.length);
 
-    this.getResult.checkWin.bind(this)();
+    this.#checkWin();
   }
-
 
   #clickCellsAround(cell) {
     const cellsAround = this.getCellsAround(cell);
@@ -68,5 +53,27 @@ export default class Move extends Board {
     noFlaggedCellsAround.forEach(cell => this.markCellAsClicked(cell));
 
     return noFlaggedCellsAround.filter((cell) => !this.isBombNearCell(cell));
+  }
+
+  #checkCellAction(cell) {
+    const isCellABomb = this.isCellABomb(cell);
+    const isBombNearCell = this.isBombNearCell(cell);
+
+    if (isCellABomb) {
+      this.result.loose.bind(this, cell)();
+    } else if (isBombNearCell) {
+      this.emojiAnimation('positive');
+      this.#checkWin();
+    } else {
+      this.emojiAnimation('positive');
+      this.#revealCellsAroundEmptyCell(cell);
+    }
+  }
+
+  #checkWin() {
+    const isWin = this.result.check.bind(this)();
+    if (isWin) {
+      this.result.win.bind(this)();
+    }
   }
 }

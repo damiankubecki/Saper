@@ -1,23 +1,19 @@
 import Panel from './Panel.js';
 
 export default class Result {
-  constructor() {
-    const win = this.#win;
 
-    this.checkWin = function () {
-      const rowsNumber = this.getRowsNumber();
-      const colsNumber = this.getColsNumber();
-      const bombsNumber = this.getBombsNumber();
-  
-      const allCellsNumber = colsNumber * rowsNumber;
-      const clickedCellsNumber = this.getClickedCells().length;
+  check() {
+    const rowsNumber = this.getRowsNumber();
+    const colsNumber = this.getColsNumber();
+    const bombsNumber = this.getBombsNumber();
 
-      return clickedCellsNumber + bombsNumber === allCellsNumber ? win.bind(this)() : false;
-    }
+    const allCellsNumber = colsNumber * rowsNumber;
+    const clickedCellsNumber = this.getClickedCells().length;
+
+    return !!(clickedCellsNumber + bombsNumber === allCellsNumber);
   }
 
-
-  #win() {
+  win() {
     this.disableAllCells();
     this.flagAllBombs();
     this.emojiAnimation('positive', true);
@@ -26,7 +22,6 @@ export default class Result {
 
     console.log('wygrales');
   }
-
 
   loose(cellClicked) {
     this.revealBoardAfterLoose();
