@@ -8,7 +8,7 @@ export default class Config extends Move {
     gameContainer = document.querySelector('.gameContainer');
     gameBoard = document.querySelector('.board');
 
-    #difficulty = {
+    #difficultyLevels = {
         easy: {
             rows: 8,
             cols: 8,
@@ -24,8 +24,7 @@ export default class Config extends Move {
             cols: 30,
             bombs: 99,
         },
-    };
-
+    }
     #itemsSize = {
         small: {
             cell: 30,
@@ -42,7 +41,7 @@ export default class Config extends Move {
             font: 36,
             name: 'big'
         },
-    };
+    }
 
     #rowsNumber;
     #colsNumber;
@@ -50,16 +49,16 @@ export default class Config extends Move {
     #currentItemsSize;
     #numberOfClicksOnStart;
 
+    getRowsNumber = () => this.#rowsNumber;
+    getColsNumber = () => this.#colsNumber;
+    getBombsNumber = () => this.#bombsNumber;
+    getCurrentItemsSize = () => this.#currentItemsSize;
+    getNumberOfClicksOnStart = () => this.#numberOfClicksOnStart;
 
     #setRowsNumber = number => this.#rowsNumber = number;
-    getRowsNumber = () => this.#rowsNumber;
-
     #setColsNumber = number => this.#colsNumber = number;
-    getColsNumber = () => this.#colsNumber;
-
     #setBombsNumber = number => this.#bombsNumber = number;
-    getBombsNumber = () => this.#bombsNumber;
-
+    
     setDifficulty(difficulty, custom = false) {
         const config = custom ? custom : this.#standardDifficulty(difficulty);
         const {
@@ -78,7 +77,7 @@ export default class Config extends Move {
             easy,
             medium,
             expert
-        } = this.#difficulty;
+        } = this.#difficultyLevels;
 
         switch (difficulty) {
             case 'easy':
@@ -112,10 +111,10 @@ export default class Config extends Move {
                 break;
         }
     }
-    getCurrentItemsSize = () => this.#currentItemsSize;
+    
 
     setNumberOfClicksOnStart(number) {
         this.#numberOfClicksOnStart = number;
     }
-    getNumberOfClicksOnStart = () => this.#numberOfClicksOnStart;
+    
 }
