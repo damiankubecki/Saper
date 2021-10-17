@@ -55,7 +55,7 @@ class WindowProps {
 
     #confirmListener() {
         const config = this.#getInputsValues();
-        this.#game.setDifficulty(false, config);
+        this.#game.setCustomDifficulty(config);
         this.#game.initializeGame();
         this.#closeWindow();
     }

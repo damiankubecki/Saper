@@ -58,9 +58,27 @@ export default class Config extends Move {
     #setRowsNumber = number => this.#rowsNumber = number;
     #setColsNumber = number => this.#colsNumber = number;
     #setBombsNumber = number => this.#bombsNumber = number;
-    
-    setDifficulty(difficulty, custom = false) {
-        const config = custom ? custom : this.#standardDifficulty(difficulty);
+    setDefaultDifficulty(difficulty) {
+        const {
+            easy,
+            medium,
+            expert
+        } = this.#difficultyLevels;
+
+        let config;
+
+        switch (difficulty) {
+            case 'easy':
+                config = easy;
+                break;
+            case 'medium':
+                config = medium;
+                break;
+            case 'expert':
+                config = expert;
+                break;
+        }
+
         const {
             rows,
             cols,
@@ -71,27 +89,18 @@ export default class Config extends Move {
         this.#setColsNumber(cols);
         this.#setBombsNumber(bombs);
     }
-
-    #standardDifficulty(difficulty) {
+    setCustomDifficulty(difficulty) {
+        const config = difficulty;
         const {
-            easy,
-            medium,
-            expert
-        } = this.#difficultyLevels;
+            rows,
+            cols,
+            bombs
+        } = config;
 
-        switch (difficulty) {
-            case 'easy':
-                return easy;
-                break;
-            case 'medium':
-                return medium;
-                break;
-            case 'expert':
-                return expert;
-                break;
-        }
+        this.#setRowsNumber(rows);
+        this.#setColsNumber(cols);
+        this.#setBombsNumber(bombs);
     }
-
     setItemsSize(size) {
         const {
             small,
@@ -111,10 +120,10 @@ export default class Config extends Move {
                 break;
         }
     }
-    
+
 
     setNumberOfClicksOnStart(number) {
         this.#numberOfClicksOnStart = number;
     }
-    
+
 }
