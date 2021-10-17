@@ -7,5 +7,3 @@ const game = new Game({
     defaultItemsSize: 'normal',
     defaultNumberOfClicksOnStart: 1
 });
-
-// game.setCustomDifficulty();

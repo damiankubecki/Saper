@@ -23,8 +23,8 @@ export default class Move extends Board {
     this.markCellAsClicked(cell);
     this.#checkCellAction(cell);
   }
-
   
+
   #checkCellAction(cell) {
     const isCellABomb = this.isCellABomb(cell);
     const isBombNearCell = this.isBombNearCell(cell);
@@ -37,13 +37,6 @@ export default class Move extends Board {
     } else {
       this.emojiAnimation('positive');
       this.#revealCellsAroundEmptyCell(cell);
-    }
-  }
-
-  #checkWin() {
-    const isWin = this.result.check.bind(this)();
-    if (isWin) {
-      this.result.win.bind(this)();
     }
   }
 
@@ -68,12 +61,19 @@ export default class Move extends Board {
     this.#checkWin();
   }
 
+  #checkWin() {
+    const isWin = this.result.check.bind(this)();
+    if (isWin) {
+      this.result.win.bind(this)();
+    }
+  }
+
   #clickCellsAround(cell) {
     const cellsAround = this.getCellsAround(cell);
 
     const noFlaggedCellsAround = cellsAround.filter(cell => !this.isCellFlagged(cell));
     noFlaggedCellsAround.forEach(cell => this.markCellAsClicked(cell));
 
-    return noFlaggedCellsAround.filter((cell) => !this.isBombNearCell(cell));
+    return noFlaggedCellsAround.filter(cell => !this.isBombNearCell(cell));
   }
 }

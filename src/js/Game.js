@@ -14,7 +14,6 @@ export default class Game extends Config {
     this.initializeGame();
   }
 
-
   initializeGame() {
     const clicksOnStart = this.getNumberOfClicksOnStart();
     const bombsNumber = this.getBombsNumber();
