@@ -8,7 +8,7 @@ export default class Game extends Config {
   }) {
     super();
 
-    this.setDefaultDifficulty(defaultDifficulty);
+    this.setStandardDifficulty(defaultDifficulty);
     this.setItemsSize(defaultItemsSize);
     this.setNumberOfClicksOnStart(defaultNumberOfClicksOnStart);
     this.initializeGame();

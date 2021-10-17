@@ -55,10 +55,19 @@ export default class Config extends Move {
     getCurrentItemsSize = () => this.#currentItemsSize;
     getNumberOfClicksOnStart = () => this.#numberOfClicksOnStart;
 
-    #setRowsNumber = number => this.#rowsNumber = number;
-    #setColsNumber = number => this.#colsNumber = number;
-    #setBombsNumber = number => this.#bombsNumber = number;
-    setDefaultDifficulty(difficulty) {
+    #setRowsNumber(number) {
+        this.#rowsNumber = number;
+    }
+    #setColsNumber(number) {
+        this.#colsNumber = number;
+    }
+    #setBombsNumber(number) {
+        this.#bombsNumber = number;
+    }
+    setNumberOfClicksOnStart(number) {
+        this.#numberOfClicksOnStart = number;
+    }
+    setStandardDifficulty(difficulty) {
         const {
             easy,
             medium,
@@ -66,7 +75,6 @@ export default class Config extends Move {
         } = this.#difficultyLevels;
 
         let config;
-
         switch (difficulty) {
             case 'easy':
                 config = easy;
@@ -77,6 +85,8 @@ export default class Config extends Move {
             case 'expert':
                 config = expert;
                 break;
+            default:
+                throw new Error(`Invalid difficulty: "${difficulty}"`);
         }
 
         const {
@@ -84,18 +94,16 @@ export default class Config extends Move {
             cols,
             bombs
         } = config;
-
         this.#setRowsNumber(rows);
         this.#setColsNumber(cols);
         this.#setBombsNumber(bombs);
     }
-    setCustomDifficulty(difficulty) {
-        const config = difficulty;
-        const {
-            rows,
-            cols,
-            bombs
-        } = config;
+    setCustomDifficulty({
+        rows,
+        cols,
+        bombs
+    } = difficulty) {
+        if (!(rows && cols && bombs)) throw new Error('Invalid game properties');
 
         this.#setRowsNumber(rows);
         this.#setColsNumber(cols);
@@ -118,12 +126,8 @@ export default class Config extends Move {
             case 'big':
                 this.#currentItemsSize = big;
                 break;
+            default:
+                throw new Error(`Invalid items size: "${size}"`);
         }
     }
-
-
-    setNumberOfClicksOnStart(number) {
-        this.#numberOfClicksOnStart = number;
-    }
-
 }

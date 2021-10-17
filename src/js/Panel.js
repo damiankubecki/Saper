@@ -20,7 +20,7 @@ export default class Panel extends Menu {
 
       const renderPanelListeners = () => {
          difficultyButtons.forEach(btn => btn.addEventListener('click', () => {
-            this.setDefaultDifficulty(btn.id);
+            this.setStandardDifficulty(btn.id);
             this.restartGame();
             this.resetGamePosition();
          }))
