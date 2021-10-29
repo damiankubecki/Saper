@@ -1,4 +1,9 @@
 class WindowProps {
+
+    MAX_ROWS = 25;
+    MAX_COLS = 30;
+    MAX_BOMBS = 175;
+
     constructor() {
         this.title = 'Własna gra';
         this.content = `
@@ -10,6 +15,7 @@ class WindowProps {
             <h4 class="window__content__subtitle">Liczba bomb <span>(max 175)</span></h4>
             <input type="number" id="customGame-bombs"/>
         </div>
+        <p class="window__note">kliknij, aby rozpocząć nową grę</p>
         <button class="window__confirm">Rozpocznij</button>
         `;
         this.windowFunctions = game => {
@@ -24,7 +30,6 @@ class WindowProps {
     #game;
     #confirmBtn;
 
-
     #fillFields() {
         this.#fillRowsInput();
         this.#fillColsInput();
@@ -33,6 +38,15 @@ class WindowProps {
 
     #addConfirmListener() {
         this.#confirmBtn.addEventListener('click', () => this.#confirmListener());
+    }
+
+    #confirmListener() {
+        const config = this.#getInputsValues();
+        const configError = this.#checkInputValues(config);
+        if (configError) return this.#setWindowNoteText(configError);
+        this.#game.setCustomDifficulty(config);
+        this.#game.initializeGame();
+        this.#closeWindow();
     }
 
     #fillRowsInput() {
@@ -53,13 +67,6 @@ class WindowProps {
         bombsInput.value = bombsNumber;
     }
 
-    #confirmListener() {
-        const config = this.#getInputsValues();
-        this.#game.setCustomDifficulty(config);
-        this.#game.initializeGame();
-        this.#closeWindow();
-    }
-
     #getInputsValues() {
         const rowsInput = document.querySelector('#customGame-rows');
         const colsInput = document.querySelector('#customGame-cols');
@@ -72,9 +79,27 @@ class WindowProps {
         }
     }
 
+    #checkInputValues({
+        rows,
+        cols,
+        bombs
+    } = {}) {
+
+        if (rows > this.MAX_ROWS) return 'ustaw mniejszą ilość wierszy';
+        if (cols > this.MAX_COLS) return 'ustaw mniejszą ilość kolumn';
+        if (bombs > this.MAX_BOMBS) return 'ustaw mniejszą ilość bomb';
+        if ((rows && cols) < 2) return 'ustaw większą ilość komórek';
+        if (bombs > (rows * cols / 2)) return 'ustaw mniejszą ilość bomb';
+    }
+
     #closeWindow() {
         const optionsWindow = document.querySelector(".window");
         optionsWindow.classList.remove("active");
+    }
+
+    #setWindowNoteText(text) {
+        const note = document.querySelector('.window__note');
+        note.textContent = text;
     }
 }
 
