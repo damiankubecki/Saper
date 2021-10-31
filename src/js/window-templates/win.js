@@ -5,6 +5,7 @@ class WindowProps {
         <div class="window__content__container">
             <h4 class="window__content__subtitle">Gra zakończona zwycięstwem</h4>
             <p class="window__content__paragraph--bigger">Czas: <span id="stats_time"></span></p>
+            <p class="window__content__paragraph--bigger">Zagęszczenie bomb: <span id="stats_compaction"></span></p>
         </div>
         <button class="window__confirm">Nowa gra</button>
         `;
@@ -30,14 +31,26 @@ class WindowProps {
     }
 
     #fillStats() {
-        this.#fillGameTime();
+        this.#fillGameTimeInfo();
+        this.#fillBombsCompactionInfo();
     }
 
-    #fillGameTime() {
+    #fillGameTimeInfo() {
         const timeSpan = document.querySelector('#stats_time');
 
         const gameTime = this.#game.getTimerTime();
         timeSpan.textContent = `${gameTime}s`;
+    }
+
+    #fillBombsCompactionInfo() {
+        const compactionSpan = document.querySelector('#stats_compaction');
+
+        const bombs = this.#game.getBombsNumber();
+        const rows = this.#game.getRowsNumber();
+        const cols = this.#game.getColsNumber();
+
+        const bombsCompaction = bombs / (rows * cols) * 100;
+        compactionSpan.textContent = `${bombsCompaction.toFixed(2)}%`;
     }
 
     #closeWindow() {

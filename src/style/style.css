@@ -540,11 +540,11 @@ body .gameContainer .window__content__paragraph {
 }
 
 body .gameContainer .window__content__paragraph--bigger {
-  font-size: 2rem;
+  font-size: 1.9rem;
 }
 
 body .gameContainer .window__content__paragraph--bigger span {
-  font-size: 2.1rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
