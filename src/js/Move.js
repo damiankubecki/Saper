@@ -8,6 +8,16 @@ export default class Move extends Board {
     this.result = new Result();
   }
 
+  #clicksCounter = 0;
+
+  getClicks() {
+    return this.#clicksCounter;
+  }
+
+  setClicksCounter(quantity) {
+    this.#clicksCounter = quantity;
+  }
+
   clickEmptyCellOnStart(quantity) {
     for (let i = 0; i < quantity; i++) {
       const emptyCells = this.getEmptyCells();
@@ -20,10 +30,14 @@ export default class Move extends Board {
   }
 
   clickCell(cell) {
+    this.#addClickToClicksCounter();
     this.markCellAsClicked(cell);
     this.#checkCellAction(cell);
   }
-  
+
+  #addClickToClicksCounter() {
+    this.#clicksCounter++;
+  }
 
   #checkCellAction(cell) {
     const isCellABomb = this.isCellABomb(cell);

@@ -22,6 +22,7 @@ export default class Game extends Config {
     this.clickEmptyCellOnStart(clicksOnStart);
     this.resetAndStartTimer();
     this.setBombsCounter(bombsNumber);
+    this.setClicksCounter(0);
     this.resetEmoji();
   }
 

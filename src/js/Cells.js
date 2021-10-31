@@ -101,7 +101,7 @@ export default class Cells extends Panel {
 
   toggleFlagMarkOnCell = cell => cell.classList.toggle('flagged');
 
-  setRedBackground = cell => (cell.style.backgroundColor = '#B22222');
+  setRedBackground = cell => cell.style.backgroundColor = '#B22222';
 
   #setQuantityOfBombsNearCell(cell) {
     const bombsNearCell = cell.dataset.near * 1;
