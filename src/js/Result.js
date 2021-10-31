@@ -1,3 +1,6 @@
+import Window from "./Window.js";
+import winningWindow from "./window-templates/win.js"
+
 export default class Result {
 
   check() {
@@ -18,7 +21,7 @@ export default class Result {
     this.stopTimer();
     this.setBombsCounter(0);
 
-    console.log('wygrales');
+    new Window(this, winningWindow);
   }
 
   loose(cellClicked) {

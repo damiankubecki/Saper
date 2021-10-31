@@ -47,6 +47,11 @@ export default class Panel extends Menu {
       bombsCounter.textContent = bombs;
    }
 
+   getTimerTime() {
+      const timer = document.querySelector('#timer');
+      return timer.textContent;
+   }
+
    resetAndStartTimer() {
       let timer = document.querySelector('#timer');
       timer = this.#resetTimer(timer);

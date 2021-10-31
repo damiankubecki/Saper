@@ -12,7 +12,7 @@ export default class Config extends Move {
         easy: {
             rows: 8,
             cols: 8,
-            bombs: 10,
+            bombs: 1,
         },
         medium: {
             rows: 16,
