@@ -30,7 +30,7 @@ export default class Move extends Board {
     const isBombNearCell = this.isBombNearCell(cell);
 
     if (isCellABomb) {
-      this.result.loose.bind(this, cell)();
+      this.result.lose.bind(this, cell)();
     } else if (isBombNearCell) {
       this.emojiAnimation('positive');
       this.#checkWin();

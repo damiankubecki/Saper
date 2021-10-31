@@ -1,5 +1,6 @@
 import Window from "./Window.js";
-import winningWindow from "./window-templates/win.js"
+import winningGameWindow from "./window-templates/win.js";
+import losingGameWindow from "./window-templates/lose.js";
 
 export default class Result {
 
@@ -21,16 +22,16 @@ export default class Result {
     this.stopTimer();
     this.setBombsCounter(0);
 
-    new Window(this, winningWindow);
+    new Window(this, winningGameWindow);
   }
 
-  loose(cellClicked) {
-    this.revealBoardAfterLoose();
+  lose(cellClicked) {
+    this.revealBoardAfterLose();
     this.disableAllCells();
     this.emojiAnimation('negative', true);
     this.stopTimer();
     this.setRedBackground(cellClicked);
 
-    console.log('game over');
+    new Window(this, losingGameWindow);
   }
 }

@@ -10,7 +10,7 @@ export default class Board extends Cells {
     this.#renderListeningToCells();
   }
 
-  revealBoardAfterLoose() {
+  revealBoardAfterLose() {
     this.#revealBombs();
     this.#revealFlaggedCellsNoBomb();
   }
