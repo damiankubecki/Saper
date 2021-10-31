@@ -105,7 +105,7 @@ export default class Cells extends Panel {
 
   #setQuantityOfBombsNearCell(cell) {
     const bombsNearCell = cell.dataset.near * 1;
-    cell.textContent = bombsNearCell ? bombsNearCell : '';
+    cell.textContent = bombsNearCell || '';
   }
 
   #findCell(x, y) {
