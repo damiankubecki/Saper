@@ -20,6 +20,7 @@ body {
 }
 
 body .gameContainer {
+  min-height: 400px;
   position: absolute;
   left: 50%;
   top: 0;
@@ -340,9 +341,6 @@ body .gameContainer .header__buttons-emoji.positive {
 }
 
 body .gameContainer .board {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
   width: 304px;
   padding: 5px 0;
   display: -webkit-box;
