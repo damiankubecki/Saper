@@ -5,8 +5,8 @@ class WindowProps {
         <div class="window__content__container">
             <h4 class="window__content__subtitle">Gra zakończona zwycięstwem</h4>
             <p class="window__content__paragraph--bigger">Czas: <span id="stats_time"></span></p>
-            <p class="window__content__paragraph--bigger">Zagęszczenie bomb: <span id="stats_compaction"></span></p>
             <p class="window__content__paragraph--bigger">Ilość kliknięć: <span id="stats_clicks"></span></p>
+            <p class="window__content__paragraph--bigger">Zagęszczenie bomb: <span id="stats_compaction"></span></p>
         </div>
         <button class="window__confirm">Nowa gra</button>
         `;
@@ -33,14 +33,14 @@ class WindowProps {
 
     #fillStats() {
         this.#fillGameTimeInfo();
-        this.#fillBombsCompactionInfo();
         this.#fillClicksInfo();
+        this.#fillBombsCompactionInfo();
     }
 
     #fillGameTimeInfo() {
         const timeSpan = document.querySelector('#stats_time');
 
-        const gameTime = this.#game.getTimerTime();
+        const gameTime = this.#game.getGameTime();
         timeSpan.textContent = `${gameTime}s`;
     }
 

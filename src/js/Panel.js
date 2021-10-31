@@ -47,7 +47,7 @@ export default class Panel extends Menu {
       bombsCounter.textContent = bombs;
    }
 
-   getTimerTime() {
+   getGameTime() {
       const timer = document.querySelector('#timer');
       return timer.textContent;
    }

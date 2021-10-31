@@ -23,6 +23,8 @@ export default class Cells extends Panel {
 
   getAllCells = () => [...document.querySelectorAll('.board__cell')];
 
+  getFlaggedCellsWithBomb = () => this.getFlaggedCells().filter(cell => this.isCellABomb(cell));
+
   getFlaggedCells = () => [...document.querySelectorAll('.flagged')];
 
   getNoFlaggedBombs() {

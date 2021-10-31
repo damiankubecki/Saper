@@ -376,7 +376,7 @@ body .gameContainer .board__cell {
   background-repeat: no-repeat;
 }
 
-body .gameContainer .board__cell[data-bomb="1"] {
+body .gameContainer .board__cell[data-bomb="1"].clicked {
   background-image: url(../../images/bomb.png);
 }
 

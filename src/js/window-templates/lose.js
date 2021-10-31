@@ -5,8 +5,9 @@ class WindowProps {
         <div class="window__content__container">
             <h4 class="window__content__subtitle">Gra zakończona porażką</h4>
             <p class="window__content__paragraph--bigger">Czas: <span id="stats_time"></span></p>
-            <p class="window__content__paragraph--bigger">Zagęszczenie bomb: <span id="stats_compaction"></span></p>
             <p class="window__content__paragraph--bigger">Ilość kliknięć: <span id="stats_clicks"></span></p>
+            <p class="window__content__paragraph--bigger">Ilość wykrytych bomb: <span id="stats_detected-bombs"></span></p>
+            <p class="window__content__paragraph--bigger">Zagęszczenie bomb: <span id="stats_compaction"></span></p>
         </div>
         <button class="window__confirm">Nowa gra</button>
         `;
@@ -33,14 +34,15 @@ class WindowProps {
 
     #fillStats() {
         this.#fillGameTimeInfo();
-        this.#fillBombsCompactionInfo();
         this.#fillClicksInfo();
+        this.#fillDetectedBombsInfo();
+        this.#fillBombsCompactionInfo();
     }
 
     #fillGameTimeInfo() {
         const timeSpan = document.querySelector('#stats_time');
 
-        const gameTime = this.#game.getTimerTime();
+        const gameTime = this.#game.getGameTime();
         timeSpan.textContent = `${gameTime}s`;
     }
 
@@ -61,6 +63,15 @@ class WindowProps {
         const clicks = this.#game.getClicks();
 
         clicksSpan.textContent = clicks;
+    }
+
+    #fillDetectedBombsInfo() {
+        const detectedBombsSpan = document.querySelector('#stats_detected-bombs');
+
+        const flaggedCellsWithBomb = this.#game.getFlaggedCellsWithBomb();
+        const bombsNumber = this.#game.getBombsNumber();
+
+        detectedBombsSpan.textContent = `${flaggedCellsWithBomb.length}/${bombsNumber}`;
     }
 
     #closeWindow() {
