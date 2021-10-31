@@ -61,14 +61,14 @@ export default class Board extends Cells {
     const allCells = this.getAllCells();
 
     allCells.forEach(cell => cell.addEventListener('click', () => {
-      this.isCellFlagged(cell) ? undefined : this.clickCell(cell);
+      const isCellFlagged = this.isCellFlagged(cell);
+      if(!isCellFlagged) this.clickCell(cell);
     }));
 
     allCells.forEach(cell => cell.addEventListener('contextmenu', e => {
       e.preventDefault();
       this.toggleFlagMarkOnCell(cell);
-      const numberOfBombsToDisplay = this.getBombsLeft();
-      this.setBombsCounter(numberOfBombsToDisplay);
+      this.setBombsCounter(this.getBombsLeft());
     }));
   }
 
