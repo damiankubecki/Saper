@@ -8,7 +8,24 @@
 html {
   font-family: "Rajdhani", sans-serif;
   font-size: 10px;
-}
 
-@import './variables';
-@import './game';
+  body.default-theme {
+    @import './themes/default';
+    @import './game';
+  }
+
+  body.theme2 {
+    @import './themes/theme2';
+    @import './game';
+  }
+
+  body.theme3 {
+    @import './themes/theme3';
+    @import './game';
+  }
+
+  body.theme4 {
+    @import './themes/theme4';
+    @import './game';
+  }
+}

@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 5px;
-  border-bottom: 3px solid $primary-color--dark;
+  border-bottom: 3px solid $board-additional-color;
 
   &__counter {
     min-width: 7rem;
@@ -12,7 +12,7 @@
     text-align: right;
     font-weight: bold;
     font-size: 3.5rem;
-    color: $red;
+    color: $score-board-font-color;
     background-color: black;
 
     &>p {
@@ -28,8 +28,8 @@
     &-showMenu {
       padding: 10px;
       border: 0;
-      background-color: $primary-color;
-      color: $black;
+      background-color: $board-color;
+      color: $font-color;
       font-size: 20px;
       cursor: pointer;
 
@@ -74,11 +74,11 @@
       width: 5rem;
       height: 5rem;
       border: 3px solid;
-      border-color: $border-template;
+      border-color: #fff #808080 #808080 #fff;
       background-image: url(../../images/neutral.svg);
       background-repeat: no-repeat;
       background-size: cover;
-      background-color: transparent;
+      background-color: $emoji-background-color;
 
       &.negative {
         animation: 0.3s negativeEmoji linear both;

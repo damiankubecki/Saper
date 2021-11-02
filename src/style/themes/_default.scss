@@ -1,0 +1,26 @@
+$score-board-font-color: rgb(212, 64, 64);
+$font-color: rgb(15, 15, 15);
+$cell-color: #c0c0c0;
+$clicked-cell-color: #c0c0c0;
+$board-color: #c0c0c0;
+$board-additional-color: #808080;
+$border-template: #fff $board-additional-color $board-additional-color #fff;
+$left-menu-color: #808080;
+$emoji-background-color:#c0c0c0;
+$body: white;
+
+//cells font colors
+$near1: blue;
+$near2: green;
+$near3: red;
+$near4: rgb(0, 0, 151);
+$near5: brown;
+$near6: rgb(4, 111, 129);
+$near7: rgb(60, 4, 77);
+$near8: rgb(95, 81, 17);
+
+//themes buttons colors
+$btn-default-color: #c0c0c0;
+$btn-theme2-color: linear-gradient(180deg, rgba(80,81,96,1) 50%, rgba(174,189,56,1) 100%);
+$btn-theme3-color: linear-gradient(180deg, #7D4427 50%, #2E4600 100%);
+$btn-theme4-color: linear-gradient(180deg, #A1D6E2 50%, #1995AD 100%);

@@ -4,13 +4,14 @@
   left: 0;
   right: 0;
   height: 100%;
-  background-color: $primary-color;
+  background-color: $board-color;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   transform: scale(0);
   transition: .3s;
+  color: $font-color;
 
   &.active {
     transform: scale(1);
@@ -86,10 +87,11 @@
     padding: 5px 0;
     border-radius: 5px;
     font-size: 1.6rem;
-    background-color: $primary-color;
+    background-color: $board-color;
     border-color: $border-template;
     cursor: pointer;
     transition: .1s;
+    color: $font-color;
 
     &:hover {
       transform: scale(1.1) rotate(.5deg);
@@ -97,7 +99,7 @@
   }
 
   &__close {
-    background-color: $red;
+    background-color: rgb(212, 64, 64);
     color: #fff;
   }
 }

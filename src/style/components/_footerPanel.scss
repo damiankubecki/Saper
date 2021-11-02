@@ -1,9 +1,10 @@
 .panel {
   &__title {
     padding: 5px 0 10px;
-    border-top: 3px solid $primary-color--dark;
+    border-top: 3px solid $board-additional-color;
     text-align: center;
     font-size: 2rem;
+    color: $font-color;
   }
 
   &__buttonsContainer {
@@ -16,8 +17,9 @@
     padding: 2px 15px;
     border: 4px solid;
     border-color: $border-template;
-    background-color: $primary-color;
+    background-color: $board-color;
     font-size: 1.8rem;
+    color: $font-color;
     cursor: pointer;
 
     &:hover {

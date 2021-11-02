@@ -27,8 +27,8 @@
             width: 100%;
             margin: 5px 0;
             border: none;
-            background-color: $primary-color--dark;
-            color: $black;
+            background-color: $left-menu-color;
+            color: $font-color;
             font-size: 25px;
             text-align: center;
             cursor: pointer;
@@ -39,7 +39,7 @@
     &__actions {
         padding: 20px 0 0 0;
         border-radius: 20px 0 0 0;
-        background-color: $primary-color--dark;
+        background-color: $left-menu-color;
 
         &:after {
             content: "";
@@ -47,9 +47,9 @@
             height: 80px;
             width: 40px;
             background: linear-gradient(180deg,
-                    $primary-color--dark 0%,
-                    $primary-color--dark 25%,
-                    white 100%);
+                    $left-menu-color 0%,
+                    $left-menu-color 25%,
+                    $body 100%);
         }
 
         button:hover {
@@ -95,19 +95,19 @@
         }
 
         #default-theme {
-            background-color: $primary-color;
+            background: $btn-default-color;
         }
 
-        #night-theme {
-            background-color: $NIGHT-primary-color;
+        #theme2 {
+            background: $btn-theme2-color;
         }
 
-        #dark-theme {
-            background-color: $DARK-primary-color;
+        #theme3 {
+            background: $btn-theme3-color;
         }
 
-        #red-theme {
-            background-color: $RED-primary-color;
+        #theme4 {
+            background: $btn-theme4-color;
         }
     }
 }

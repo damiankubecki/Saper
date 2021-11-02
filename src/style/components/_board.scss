@@ -10,7 +10,7 @@
     height: 38px;
     border: 3px solid;
     border-color: $border-template;
-    background-color: $primary-color;
+    background-color: $cell-color;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +26,8 @@
     }
 
     &.clicked {
-      border: 1px solid $primary-color--dark;
+      border: 1px solid $board-additional-color;
+      background-color: $clicked-cell-color;
       pointer-events: none;
     }
 
