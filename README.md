@@ -1,5 +1,5 @@
-# "Minesweeper"(https://damiankubecki.github.io/Saper/) 
-=============
+# ["Minesweeper"](https://damiankubecki.github.io/Saper/) 
+
 
 ### Slightly extended game "Minesweeper" made entirely by me. 
 You can create custom game and choose one of the five themes. 
