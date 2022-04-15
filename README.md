@@ -1,4 +1,4 @@
-#[The Minesweeper](https://damiankubecki.github.io/Saper/) tap to go live
+# [The Minesweeper](https://damiankubecki.github.io/Saper/) tap to go live
 
 ### Slightly extended game "Minesweeper" made entirely by me. 
 You can create custom game and choose one of the five themes. 
