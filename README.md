@@ -1,4 +1,4 @@
-# [The Minesweeper](https://damiankubecki.github.io/Saper/) 
+<h1> [The Minesweeper](https://damiankubecki.github.io/Saper/) <h1> <span> tap to open live view </span>
 
 <hr>
 
