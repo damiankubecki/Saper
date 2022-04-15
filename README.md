@@ -1,5 +1,7 @@
 # [The Minesweeper](https://damiankubecki.github.io/Saper/) 
 
+<hr>
+
 ### Slightly extended game "Minesweeper" made entirely by me. 
 You can create custom game and choose one of the five themes. 
 
