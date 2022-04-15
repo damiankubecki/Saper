@@ -6,6 +6,7 @@ You can create custom game and choose one of the five themes.
 - press 'm' on the keyboard to open the menu
 - press 'r' to restart the game
 
+<hr>
 
 <h4>Made with: </h4>
 <p align="left">
