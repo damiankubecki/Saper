@@ -26,7 +26,7 @@ You can create custom game and choose one of the five themes.
 <h4>Made with: </h4>
 
 - parcel
-- HTML | SASS | JavaScript 	&#128182
+- HTML | SASS | JavaScript
 
 [Saper]: <https://saper-online.netlify.app/>
 [The Minesweeper]: <https://saper-online.netlify.app/>
