@@ -1,4 +1,4 @@
-# [Saper]
+# [Saper] <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
 
 ### Nieco rozszerzona wersja gry "Saper".
 Grę możesz skonfigurować według swoich preferencji oraz wybrać jeden z pięciu dostępnych motywów.
@@ -16,7 +16,7 @@ Grę możesz skonfigurować według swoich preferencji oraz wybrać jeden z pię
 
 <hr>
 
-# [The Minesweeper]
+# [The Minesweeper] <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
 
 ### Slightly extended game "Minesweeper". 
 You can create custom game and choose one of the five themes. 
