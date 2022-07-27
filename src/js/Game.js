@@ -1,11 +1,7 @@
 import Config from './Config.js';
 
 export default class Game extends Config {
-  constructor({
-    defaultDifficulty,
-    defaultItemsSize,
-    defaultNumberOfClicksOnStart
-  }) {
+  constructor({ defaultDifficulty, defaultItemsSize, defaultNumberOfClicksOnStart }) {
     super();
 
     this.setStandardDifficulty(defaultDifficulty);

@@ -1,7 +1,6 @@
 import Cells from './Cells.js';
 
 export default class Board extends Cells {
-
   newBoard() {
     this.#setBoardWidth();
     this.#renderCellsOnBoard();
@@ -20,14 +19,13 @@ export default class Board extends Cells {
     this.gameContainer.style.top = 0;
   }
 
-
   #revealBombs() {
     const cellsWithBomb = this.getCellsWithBomb();
     cellsWithBomb.forEach(cell => {
       if (!this.isCellFlagged(cell)) {
         this.markCellAsClicked(cell);
       }
-    })
+    });
   }
 
   #revealFlaggedCellsNoBomb() {
@@ -36,7 +34,7 @@ export default class Board extends Cells {
       if (!this.isCellABomb(cell)) {
         this.markCellAsFakeBomb(cell);
       }
-    })
+    });
   }
 
   #setBoardWidth() {
@@ -60,16 +58,20 @@ export default class Board extends Cells {
   #renderListeningToCells() {
     const allCells = this.getAllCells();
 
-    allCells.forEach(cell => cell.addEventListener('click', () => {
-      const isCellFlagged = this.isCellFlagged(cell);
-      if(!isCellFlagged) this.clickCell(cell);
-    }));
+    allCells.forEach(cell =>
+      cell.addEventListener('click', () => {
+        const isCellFlagged = this.isCellFlagged(cell);
+        if (!isCellFlagged) this.clickCell(cell);
+      })
+    );
 
-    allCells.forEach(cell => cell.addEventListener('contextmenu', e => {
-      e.preventDefault();
-      this.toggleFlagMarkOnCell(cell);
-      this.setBombsCounter(this.getBombsLeft());
-    }));
+    allCells.forEach(cell =>
+      cell.addEventListener('contextmenu', e => {
+        e.preventDefault();
+        this.toggleFlagMarkOnCell(cell);
+        this.setBombsCounter(this.getBombsLeft());
+      })
+    );
   }
 
   #addDatasetToCells() {
@@ -140,6 +142,6 @@ export default class Board extends Cells {
       const numberOfBombsAroundCell = this.getNumberOfBombsInCells(...cellsAround);
 
       this.setCellNearDataset(cell, numberOfBombsAroundCell);
-    })
+    });
   }
 }

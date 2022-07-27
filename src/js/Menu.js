@@ -35,7 +35,7 @@ export default class Menu {
       y = this.gameContainer.offsetTop - e.clientY;
     });
 
-    actionBtn.addEventListener('mouseup', () => mousedown = false);
+    actionBtn.addEventListener('mouseup', () => (mousedown = false));
 
     window.addEventListener('mousemove', e => {
       if (mousedown) {
@@ -73,10 +73,12 @@ export default class Menu {
   }
 
   #changeTheme(actionBtns) {
-    actionBtns.forEach(btn => btn.addEventListener('click', () => {
-      document.body.removeAttribute('class');
-      document.body.classList.add(btn.id);
-    }));
+    actionBtns.forEach(btn =>
+      btn.addEventListener('click', () => {
+        document.body.removeAttribute('class');
+        document.body.classList.add(btn.id);
+      })
+    );
   }
 
   #closeOpenWindow() {

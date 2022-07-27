@@ -1,9 +1,8 @@
-import Window from "./Window.js";
-import winningGameWindow from "./window-templates/win.js";
-import losingGameWindow from "./window-templates/lose.js";
+import Window from './Window.js';
+import winningGameWindow from './window-templates/win.js';
+import losingGameWindow from './window-templates/lose.js';
 
 export default class Result {
-
   check() {
     const rowsNumber = this.getRowsNumber();
     const colsNumber = this.getColsNumber();

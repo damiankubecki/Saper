@@ -36,7 +36,9 @@ export default class Cells extends Panel {
   getEmptyCells() {
     const allCells = this.getAllCells();
 
-    return allCells.filter(cell => cell.dataset.near === '0' && cell.dataset.bomb === '0' && !cell.classList.contains('clicked'));
+    return allCells.filter(
+      cell => cell.dataset.near === '0' && cell.dataset.bomb === '0' && !cell.classList.contains('clicked')
+    );
   }
 
   getCellsWithBomb() {
@@ -53,8 +55,7 @@ export default class Cells extends Panel {
 
   getClickedCells = () => [...document.querySelectorAll('.board__cell.clicked')];
 
-  getNumberOfBombsInCells = (...cells) =>
-    cells.filter((cell) => cell.dataset.bomb === '1').length;
+  getNumberOfBombsInCells = (...cells) => cells.filter(cell => cell.dataset.bomb === '1').length;
 
   getCellsAround(cell) {
     const cellX = cell.dataset.x * 1;
@@ -103,7 +104,7 @@ export default class Cells extends Panel {
 
   toggleFlagMarkOnCell = cell => cell.classList.toggle('flagged');
 
-  setRedBackground = cell => cell.style.backgroundColor = '#B22222';
+  setRedBackground = cell => (cell.style.backgroundColor = '#B22222');
 
   #setQuantityOfBombsNearCell(cell) {
     const bombsNearCell = cell.dataset.near * 1;
@@ -113,6 +114,6 @@ export default class Cells extends Panel {
   #findCell(x, y) {
     const cells = this.getAllCells();
 
-    return cells.find((cell) => cell.dataset.x == x && cell.dataset.y == y);
+    return cells.find(cell => cell.dataset.x == x && cell.dataset.y == y);
   }
 }

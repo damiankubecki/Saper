@@ -1,0 +1,81 @@
+.board {
+  width: 304px;
+  padding: 5px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+
+  &__cell {
+    width: 38px;
+    height: 38px;
+    border: 3px solid;
+    border-color: $border-template;
+    background-color: $cell-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &[data-bomb='1'].clicked {
+      background-image: url(../images/bomb.png);
+    }
+
+    &.clicked {
+      border: 1px solid $board-additional-color;
+      background-color: $clicked-cell-color;
+      pointer-events: none;
+    }
+
+    &.flagged {
+      background-image: url(../images/flag.png);
+      background-size: 75%;
+      cursor: default;
+
+      &.no-bomb {
+        background-image: url(../images/bomb2.png);
+        background-size: 80%;
+      }
+    }
+
+    &.freeze {
+      pointer-events: none;
+    }
+
+    &[data-near='1'] {
+      color: $near1;
+    }
+
+    &[data-near='2'] {
+      color: $near2;
+    }
+
+    &[data-near='3'] {
+      color: $near3;
+    }
+
+    &[data-near='4'] {
+      color: $near4;
+    }
+
+    &[data-near='5'] {
+      color: $near5;
+    }
+
+    &[data-near='6'] {
+      color: $near6;
+    }
+
+    &[data-near='7'] {
+      color: $near7;
+    }
+
+    &[data-near='8'] {
+      color: $near8;
+    }
+  }
+}
