@@ -10,7 +10,7 @@ Grę możesz skonfigurować według swoich preferencji oraz wybrać jeden z pię
 
 :wrench: **parcel**
 <br>
-:bulb: **HTML | SASS | JavaScript**
+:bulb:  **HTML | SASS | JavaScript**
 
 [The Minesweeper]: <https://saper-online.netlify.app/>
 
@@ -26,13 +26,9 @@ You can create custom game and choose one of the five themes.
 
 <h4>Made with: </h4>
 
-:wrench: 
+:wrench: **parcel**
 <br>
-**parcel**
-<br>
-:bulb: 
-<br>
-**HTML | SASS | JavaScript**
+:bulb:  **HTML | SASS | JavaScript**
 
 [Saper]: <https://saper-online.netlify.app/>
 [The Minesweeper]: <https://saper-online.netlify.app/>
