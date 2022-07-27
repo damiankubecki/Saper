@@ -7,12 +7,12 @@ Grę możesz skonfigurować według swoich preferencji oraz wybrać jeden z pię
 - nacisnij 'r' w celu rozpoczęcia gry od nowa
 
 <h4>Stworzone przy użyciu: </h4>
+
 - parcel
 - HTML
 - SASS
 - JavaScript
-- - nacisnij 'r' w celu rozpoczęcia gry od nowa
-- nacisnij 'r' w celu rozpoczęcia gry od nowa
+
 [The Minesweeper]: <https://saper-online.netlify.app/>
 
 <hr>
@@ -26,6 +26,7 @@ You can create custom game and choose one of the five themes.
 - press 'r' to restart the game
 
 <h4>Made with: </h4>
+
 - parcel
 - HTML
 - SASS
