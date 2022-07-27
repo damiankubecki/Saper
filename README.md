@@ -28,7 +28,7 @@ You can create custom game and choose one of the five themes.
 
 :wrench: **parcel**
 <br>
-:bulb:  **HTML | SASS | JavaScript**
+:bulb:  **HTML | SCSS | JavaScript**
 
 [Saper]: <https://saper-online.netlify.app/>
 [The Minesweeper]: <https://saper-online.netlify.app/>
