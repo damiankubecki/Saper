@@ -6,11 +6,7 @@ Grę możesz skonfigurować według swoich preferencji oraz wybrać jeden z pię
 - naciśnij 'm' aby otworzyć menu gry
 - nacisnij 'r' w celu rozpoczęcia gry od nowa
 
-<h4>Stworzone przy użyciu: </h4>
-
-:wrench: **parcel**
-<br>
-:bulb:  **HTML | SCSS | JavaScript**
+:bulb:  **parcel | HTML | SCSS | JavaScript**
 
 [The Minesweeper]: <https://saper-online.netlify.app/>
 
@@ -26,9 +22,7 @@ You can create custom game and choose one of the five themes.
 
 <h4>Made with: </h4>
 
-:wrench: **parcel**
-<br>
-:bulb:  **HTML | SCSS | JavaScript**
+:bulb:  **parcel | HTML | SCSS | JavaScript**
 
 [Saper]: <https://saper-online.netlify.app/>
 [The Minesweeper]: <https://saper-online.netlify.app/>
