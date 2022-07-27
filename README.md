@@ -1,6 +1,6 @@
 # [Saper]
 
-### Nieco rozszerzona wersja gry "Saper" stworzona przeze mnie od 0.
+### Nieco rozszerzona wersja gry "Saper".
 Grę możesz skonfigurować według swoich preferencji oraz wybrać jeden z pięciu dostępnych motywów.
 
 - naciśnij 'm' aby otworzyć menu gry
@@ -20,7 +20,7 @@ Grę możesz skonfigurować według swoich preferencji oraz wybrać jeden z pię
 
 # [The Minesweeper]
 
-### Slightly extended game "Minesweeper" made entirely by me. 
+### Slightly extended game "Minesweeper". 
 You can create custom game and choose one of the five themes. 
 
 - press 'm' on the keyboard to open the menu
