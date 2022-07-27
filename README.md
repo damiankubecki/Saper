@@ -1,5 +1,3 @@
- <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
-
 # [Saper] 
 
 ### Nieco rozszerzona wersja gry "Saper".
@@ -34,3 +32,7 @@ You can create custom game and choose one of the five themes.
 
 [Saper]: <https://saper-online.netlify.app/>
 [The Minesweeper]: <https://saper-online.netlify.app/>
+
+<hr>
+ <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
+
