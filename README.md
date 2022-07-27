@@ -9,9 +9,7 @@ Grę możesz skonfigurować według swoich preferencji oraz wybrać jeden z pię
 <h4>Stworzone przy użyciu: </h4>
 
 - parcel
-- HTML
-- SASS
-- JavaScript
+- HTML | SASS | JavaScript
 
 [The Minesweeper]: <https://saper-online.netlify.app/>
 
@@ -28,9 +26,7 @@ You can create custom game and choose one of the five themes.
 <h4>Made with: </h4>
 
 - parcel
-- HTML
-- SASS
-- JavaScript
+- HTML | SASS | JavaScript
 
 [Saper]: <https://saper-online.netlify.app/>
 [The Minesweeper]: <https://saper-online.netlify.app/>
