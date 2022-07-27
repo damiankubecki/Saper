@@ -11,7 +11,8 @@ Grę możesz skonfigurować według swoich preferencji oraz wybrać jeden z pię
 - HTML
 - SASS
 - JavaScript
-
+- - nacisnij 'r' w celu rozpoczęcia gry od nowa
+- nacisnij 'r' w celu rozpoczęcia gry od nowa
 [The Minesweeper]: <https://saper-online.netlify.app/>
 
 <hr>
