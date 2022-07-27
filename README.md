@@ -10,7 +10,7 @@ Grę możesz skonfigurować według swoich preferencji oraz wybrać jeden z pię
 
 :wrench: **parcel**
 <br>
-:bulb:  **HTML | SASS | JavaScript**
+:bulb:  **HTML | SCSS | JavaScript**
 
 [The Minesweeper]: <https://saper-online.netlify.app/>
 
