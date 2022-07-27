@@ -8,7 +8,7 @@ Grę możesz skonfigurować według swoich preferencji oraz wybrać jeden z pię
 
 <h4>Stworzone przy użyciu: </h4>
 
-- parcel
+:wrench: parcel
 - HTML | SASS | JavaScript
 
 [The Minesweeper]: <https://saper-online.netlify.app/>
